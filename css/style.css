@@ -43,9 +43,49 @@ p {
     font-size: 16px;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    background-color: #0a0a0a;
+    outline: 1px solid rgb(179, 179, 179);
+    border-radius: 3px;
+    border: 0px;
+    color: white;
+    margin-bottom: 10px;
+    transition: outline 150ms;
+    padding: 5px;
+}
+
+input:focus{
+    outline: 1px solid rgb(133, 11, 238);
+}
+
+label{
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color: white;
+}
+
 .card-conteudo{
+    display: flex;
+    flex-direction: column;
     background-color: #090909;
-    padding: 20px;
+    padding: 30px;
     border-radius: 7px;
+    margin-top: 20px;
+}
+
+.p-button{
+    align-self: center;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    outline: 0px;
+    color: white;
+    background-color: rgb(133, 11, 238);
     margin-top: 20px;
 }
