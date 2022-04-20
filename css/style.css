@@ -1,8 +1,51 @@
-h1,h2,h3 {
-color: rgb(62, 4, 85); 
-background-color: antiquewhite;
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background-color: #131313;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: rgb(133, 11, 238);
+    text-align: center;
+    font-size: 64px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+h2{
+    color: rgb(133, 11, 238);
+    font-size: 48px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h3{
+    color: rgb(133, 11, 238);
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 p {
-background-color: beige;
+    color: rgb(173, 173, 173);
+    text-align: left;
+    font-size: 16px;
+}
+
+.card-conteudo{
+    background-color: #090909;
+    padding: 20px;
+    border-radius: 7px;
+    margin-top: 20px;
 }
