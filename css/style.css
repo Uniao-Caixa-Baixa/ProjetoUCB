@@ -110,6 +110,7 @@ section > p {
 form{
     display: flex;
     flex-direction: column;
+    
 
 }
 
@@ -122,6 +123,7 @@ input{
     margin-bottom: 10px;
     transition: outline 150ms;
     padding: 5px;
+    
 }
 
 input:focus{
@@ -134,7 +136,7 @@ label{
     margin-bottom: 5px;
     margin-top: 20px;
     color: white;
-
+    
 }
 
 section{
