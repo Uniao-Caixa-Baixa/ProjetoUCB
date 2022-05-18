@@ -4,9 +4,17 @@
     margin: 0;
 }
 
+:root{
+    --cor-primaria: #9b23eb;
+    --cor-secundaria: #f74f60;
+    --cor-terciaria: #e0603d;
+    --bg-color: #f1f0f0;
+    --bg-color-secundaria: #dbdbdb;
+}
+
 /*CABEÇALHO DAS DUAS PÁGINAS*/
 header{
-    background-image:linear-gradient(to top,rgb(0, 0, 0), #22048C); 
+    background-color: var(--cor-primaria);
     text-align: center;
     margin: 0px;
     padding: 20px;
@@ -17,21 +25,19 @@ header > h1 {
     color: #fff;
     text-align: center;
     font-size: 64px;
-    text-shadow: 1px 1px 5px black;
 }
 /*PARÁGRAFO DO CABEÇALHO DAS DUAS PÁGINAS*/
 header > p{
     text-align: center;
     color: white;
-    padding: 10px; 
-    text-shadow: 1px 1px 5px black;
+    padding: 10px;
 }
-/*  corpo *tem essa cor de fundo para contrastar com o '<main>'
+/*  c///orpo *tem essa cor de fundo para contrastar com o '<main>'
 */
 
 /*O nav está fora do header por uma questão de praticidade*/
 nav{
-    background-color: black;
+    background-color: var(--cor-primaria);
     padding: 10px;
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363);
 }
@@ -45,12 +51,12 @@ nav a{
     transition-duration: 0.5s;
 }
 nav a:hover{
-    background-color: rgb(133, 11, 238);
+    background-color: var(--cor-primaria);
     color: black;
 }
 
 body{
-    background-color: #b388e1;
+    background-color: var(--bg-color);
     
 }
 /*  Parte principal das duas páginas
@@ -59,52 +65,45 @@ body{
 main{
     display: flex;
     flex-direction: column;
-    background-color: #22048C;
     padding: 30px;
     margin: auto 80px auto 80px;
 }
 
 h2{
-    color: #f4bf0f;
+    color: var(--cor-secundaria);
     font-size: 48px;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 2px black;
 }
 h3{
-    color: #f4bf0f;
+    color: var(--cor-secundaria);
     font-size: 36px;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 2px black;
 }
 p{
-    color: white;
+    color: black;
     text-align: left;
     font-size: 16px;
-    text-shadow: 1px 1px 2px black;
 }
 section > h2{
-    color: #f4bf0f;
+    color: var(--cor-secundaria);
     font-size: 48px;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 5px black;
 }
 
 section > h3{
-    color: #f4bf0f;
+    color: var(--cor-secundaria);
     font-size: 36px;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 5px black;
 }
 
 section > p {
-    color: #fff;
+    color: black;
     text-align: left;
     font-size: 16px;
-    text-shadow: 1px 1px 5px black;
 }
 
 form{
@@ -116,10 +115,10 @@ form{
 
 input{
     outline: 1px solid rgb(179, 179, 179);
-    background-color: #000;
+    background-color: var(--bg-color-secundaria);
     border-radius: 3px;
     border: 0px;
-    color:rgb(133, 11, 238);
+    color:var(--cor-primaria);
     margin-bottom: 10px;
     transition: outline 150ms;
     padding: 5px;
@@ -127,15 +126,15 @@ input{
 }
 
 input:focus{
-    outline: 1px solid rgb(133, 11, 238);
-    color:white
+    outline: 1px solid var(--cor-primaria);
+    color:black
 
 }
 
 label{
     margin-bottom: 5px;
     margin-top: 20px;
-    color: white;
+    color: black;
     
 }
 
@@ -158,23 +157,20 @@ section{
 .login{
     display: flex;
     flex-direction: column;
-    background-color: rgb(0, 0, 0);
     padding: 30px;
     border-radius: 7px;
     margin: auto;
 }
 .login > h3{
-    color: #f4bf0f;
+    color: var(--cor-secundaria);
     font-size: 48px;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 5px black;
 }
 .login > p{
-    color: #fff;
+    color: black;
     text-align: left;
     font-size: 16px;
-    text-shadow: 1px 1px 5px black;
     
 }
 .p-button{
@@ -185,8 +181,7 @@ section{
     border-radius: 3px;
     outline: 0px;
     color: white;
-    background-color: rgb(133, 11, 238);
+    background-color: var(--cor-primaria);
     margin-top: 20px;
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.641);
-    text-shadow: 1px 1px 2px black;
 }
