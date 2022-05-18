@@ -58,7 +58,7 @@ nav a{
     transition-duration: 0.5s;
 }
 nav a:hover{
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-secundaria);
     color: black;
 }
 
@@ -120,6 +120,7 @@ form{
     display: flex;
     flex-direction: column;
     
+    
 
 }
 
@@ -132,7 +133,6 @@ input{
     margin-bottom: 10px;
     transition: outline 150ms;
     padding: 5px;
-    
 }
 
 input:focus{
