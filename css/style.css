@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Open+Sans:wght@300&family=Roboto:wght@100&family=Syne+Tactile&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Open+Sans:wght@300&family=Roboto:wght@100&family=Syne+Tactile&display=swap');
+
 *{
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
@@ -10,6 +14,8 @@
     --cor-terciaria: #e0603d;
     --bg-color: #f1f0f0;
     --bg-color-secundaria: #dbdbdb;
+    --fonte-titulo: 'Odibee Sans', cursive;
+    --fonte-texto: 'Open Sans', sans-serif;
 }
 
 /*CABEÇALHO DAS DUAS PÁGINAS*/
@@ -31,6 +37,7 @@ header > p{
     text-align: center;
     color: white;
     padding: 10px;
+    font-family: var(--fonte-texto);
 }
 /*  c///orpo *tem essa cor de fundo para contrastar com o '<main>'
 */
@@ -74,17 +81,20 @@ h2{
     font-size: 48px;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-family: var(--fonte-titulo);
 }
 h3{
     color: var(--cor-secundaria);
     font-size: 36px;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-family: var(--fonte-titulo);
 }
 p{
     color: black;
     text-align: left;
     font-size: 16px;
+    font-family: var(--fonte-texto);
 }
 section > h2{
     color: var(--cor-secundaria);
