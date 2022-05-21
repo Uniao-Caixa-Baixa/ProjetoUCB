@@ -209,3 +209,27 @@ section{
     margin-top: 20px;
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.641);
 }
+
+#pc-form{
+    background-color: var(--cor-primaria);
+    border-radius: 3px;
+}
+
+#pc-form h2, #pc-form p, #pc-form label{
+    color: white;
+}
+
+#pc-form input:not([type="submit"]), #pc-form select{
+    color: var(--cor-primaria);
+}
+
+#pc-form input:not([type="submit"]):focus, #pc-form select:focus{
+    background-color: var(--bg-color);
+    outline: 0px;
+    color:black
+}
+
+#pc-form .p-button{
+    outline: 2px solid white;
+    box-shadow: none;
+}
