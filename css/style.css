@@ -119,9 +119,6 @@ section > p {
 form{
     display: flex;
     flex-direction: column;
-    
-    
-
 }
 
 input{
@@ -139,6 +136,22 @@ input:focus{
     outline: 1px solid var(--cor-primaria);
     color:black
 
+}
+
+select{
+    outline: 1px solid rgb(179, 179, 179);
+    background-color: var(--bg-color-secundaria);
+    border-radius: 3px;
+    border: 0px;
+    color:var(--cor-primaria);
+    margin-bottom: 10px;
+    transition: outline 150ms;
+    padding: 5px;
+}
+
+select:focus{
+    outline: 1px solid var(--cor-primaria);
+    color:black
 }
 
 label{
