@@ -197,6 +197,7 @@ section{
 }
 
 .p-button{
+    cursor: pointer;
     align-self: center;
     text-decoration: none;
     text-align: center;
@@ -208,6 +209,12 @@ section{
     background-color: var(--cor-primaria);
     margin-top: 20px;
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.641);
+    transition: background-color .2s, color .2s;
+}
+
+.p-button:hover{
+    color: var(--cor-primaria);
+    background: white;
 }
 
 #pc-form{
