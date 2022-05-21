@@ -66,9 +66,7 @@ body{
     background-color: var(--bg-color);
     
 }
-/*  Parte principal das duas páginas
-    obs: eu deixei em branco pq vi q seções onde é preciso ler muito texto, é melhor usar fundo branco e letra preta. Dá pra m
-*/
+
 main{
     display: flex;
     flex-direction: column;
@@ -97,7 +95,6 @@ p{
     font-family: var(--fonte-texto);
 }
 section > h2{
-    color: var(--cor-secundaria);
     font-size: 48px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -121,36 +118,37 @@ form{
     flex-direction: column;
 }
 
-input{
-    outline: 1px solid rgb(179, 179, 179);
+input:not([type="submit"]){
     background-color: var(--bg-color-secundaria);
     border-radius: 3px;
     border: 0px;
-    color:var(--cor-primaria);
+    outline: 0px;
+    color:var(--cor-terciaria);
     margin-bottom: 10px;
     transition: outline 150ms;
     padding: 5px;
 }
 
-input:focus{
-    outline: 1px solid var(--cor-primaria);
+input:not([type="submit"]):focus{
+    background-color: var(--bg-color);
+    outline: 1px solid var(--cor-terciaria);
     color:black
 
 }
 
 select{
-    outline: 1px solid rgb(179, 179, 179);
     background-color: var(--bg-color-secundaria);
     border-radius: 3px;
     border: 0px;
-    color:var(--cor-primaria);
+    color:var(--cor-terciaria);
     margin-bottom: 10px;
     transition: outline 150ms;
     padding: 5px;
 }
 
 select:focus{
-    outline: 1px solid var(--cor-primaria);
+    background-color: var(--bg-color);
+    outline: 1px solid var(--cor-terciaria);
     color:black
 }
 
@@ -183,6 +181,7 @@ section{
     padding: 30px;
     border-radius: 7px;
     margin: auto;
+    background-color: white;
 }
 .login > h3{
     color: var(--cor-secundaria);
@@ -196,6 +195,7 @@ section{
     font-size: 16px;
     
 }
+
 .p-button{
     align-self: center;
     text-decoration: none;
