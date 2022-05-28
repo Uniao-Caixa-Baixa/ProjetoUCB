@@ -116,6 +116,7 @@ section > p {
 form{
     display: flex;
     flex-direction: column;
+    min-width: 25vw;
 }
 
 input:not([type="submit"]){
