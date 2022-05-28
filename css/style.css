@@ -223,12 +223,19 @@ section{
     background: white;
 }
 
+.button-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 #pc-form{
     background-color: var(--cor-primaria);
     border-radius: 3px;
 }
 
-#pc-form h2, #pc-form p, #pc-form label{
+#pc-form h2, #pc-form p, #pc-form label, #pc-form a{
     color: white;
 }
 
