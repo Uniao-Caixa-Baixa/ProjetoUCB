@@ -99,25 +99,6 @@ section{
     max-width: 50vw;
 }
 
-section > h2{
-    font-size: 48px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-section > h3{
-    color: var(--cor-secundaria);
-    font-size: 36px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-section > p {
-    color: black;
-    text-align: left;
-    font-size: 16px;
-}
-
 form{
     display: flex;
     flex-direction: column;
