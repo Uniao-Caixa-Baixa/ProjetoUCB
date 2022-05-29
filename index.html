@@ -14,23 +14,48 @@
         <h1>Meu PC roda?</h1>
         <p><strong>Descubra agora se o seu computador pode rodar qualquer jogo popular para PC.</strong></p>
     </header>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Login</a>
+    </nav>
     <main>
             <section class="intro">  
                 <h2>O que nós fazemos?</h2>
-                    <p>A proposta do nosso site é facilitar a vida do usuário médio que deseja jogar algum jogo, porém não <br>possui domínio de hardware e suas capacidades. Desse modo, o usuário vai apenas informar sobre sua<br> máquina e o jogo desejado, e o resto nós iremos executar.</p>
+                    <p>A proposta do nosso site é facilitar a vida do usuário médio que deseja jogar algum jogo, porém não possui domínio de hardware e suas capacidades. Desse modo, o usuário vai apenas informar sobre sua máquina e o jogo desejado, e o resto nós iremos executar.</p>
                     <h3>Como funciona?</h3>
-                    <p>Nosso sistema pede apenas para você inserir informações sobre seu hardware e o jogo que deseja,<br> e após isso iremos analisar sua máquina e observar se o computador suporta ou não determinado jogo de sua escolha. </p>
-                    <a class="p-button" href="./pages/login.html">Faça login agora</a>
-                    <br>
-                    <p>Ainda não tem sua conta? Faça seu registro agora mesmo!</p>
-                    <a class='p-button' href="./pages/registro.html">Registrar</a>
+                    <p>Nosso sistema pede apenas para você inserir informações sobre seu hardware e o jogo que deseja, e após isso iremos analisar sua máquina e observar se o computador suporta ou não determinado jogo de sua escolha. </p>
             </section>
-            <article>
-                <section>
-                    <h2>Segunda seção</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quaerat architecto, incidunt dolore totam rerum nam sed porro nihil tempora iure quibusdam dignissimos iusto distinctio consectetur et pariatur, veniam ad. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet corporis, velit exercitationem quaerat reprehenderit, nesciunt quasi fugit beatae, eum illo voluptatum dolorem? Placeat doloremque vel sapiente omnis maxime. Optio, soluta?. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus velit sunt veritatis quaerat itaque similique nisi quas voluptates nesciunt cum possimus, perspiciatis, nulla accusantium cupiditate. Porro blanditiis voluptate corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat expedita est deserunt eaque autem maxime dignissimos inventore ducimus magni, facilis accusamus numquam sed at itaque ipsam ut doloribus accusantium cumque. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum accusamus aperiam hic, vero id eius corrupti sint a qui pariatur ex voluptates atque voluptatem sunt, inventore, iste similique voluptatibus doloremque!</p>
-                </section>
-            </article>
+            <section id="pc-form">
+                <h2>Meu PC roda?</h2>
+                <p>Preencha os campos abaixo para ver quais jogos seu PC pode rodar</p>
+                <form action="">
+                    <label for="processador">Processador</label>
+                    <select name="processadores" id="processadores">
+                        <option value="">Intel i3</option>
+                        <option value="">Intel i5</option>
+                        <option value="">Intel i7</option>
+                    </select>
+                    <label for="placa-mae">Placa-mãe</label>
+                    <select name="placa-mae" id="placa-mae">
+                        <option value="">Micro ATX</option>
+                        <option value="">Mini ITX</option>
+                        <option value="">EATX</option>
+                    </select>
+                    <label for="ram">Memória RAM</label>
+                    <input type="number" min="1" max="16" name="ram" id="ram">
+                    <label for="armazenamento">Armazenamento(em GB)</label>
+                    <input type="number" name="armazenamento" id="armazenamento">
+                    <label for="placa-video">Placa de vídeo</label>
+                    <select name="placa-video" id="placa-video">
+                        <option value="">GTX 1050ti</option>
+                        <option value="">RTX 2060 1080</option>
+                        <option value="">AMD Radeon RX 580</option>
+                    </select>
+                    <a href="./pages/suporte.html">Não encontrei o componente que queria</a>
+                    <input type="submit" class="p-button">
+                </form>
+            </section>
     </main>
 </body>
 </html>

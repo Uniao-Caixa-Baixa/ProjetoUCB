@@ -1,12 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Open+Sans:wght@300&family=Roboto:wght@100&family=Syne+Tactile&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Open+Sans:wght@300&family=Roboto:wght@100&family=Syne+Tactile&display=swap');
+
 *{
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     margin: 0;
 }
 
+:root{
+    --cor-primaria: #9b23eb;
+    --cor-secundaria: #f74f60;
+    --cor-terciaria: #e0603d;
+    --bg-color: #f1f0f0;
+    --bg-color-secundaria: #dbdbdb;
+    --fonte-titulo: 'Odibee Sans', cursive;
+    --fonte-texto: 'Open Sans', sans-serif;
+}
+
 /*CABEÇALHO DAS DUAS PÁGINAS*/
 header{
-    background-image:linear-gradient(to top,rgb(0, 0, 0), #22048C); 
+    background-color: var(--cor-primaria);
     text-align: center;
     margin: 0px;
     padding: 20px;
@@ -17,21 +31,20 @@ header > h1 {
     color: #fff;
     text-align: center;
     font-size: 64px;
-    text-shadow: 1px 1px 5px black;
 }
 /*PARÁGRAFO DO CABEÇALHO DAS DUAS PÁGINAS*/
 header > p{
     text-align: center;
     color: white;
-    padding: 10px; 
-    text-shadow: 1px 1px 5px black;
+    padding: 10px;
+    font-family: var(--fonte-texto);
 }
-/*  corpo *tem essa cor de fundo para contrastar com o '<main>'
+/*  c///orpo *tem essa cor de fundo para contrastar com o '<main>'
 */
 
 /*O nav está fora do header por uma questão de praticidade*/
 nav{
-    background-color: black;
+    background-color: var(--cor-primaria);
     padding: 10px;
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363);
 }
@@ -45,97 +58,91 @@ nav a{
     transition-duration: 0.5s;
 }
 nav a:hover{
-    background-color: rgb(133, 11, 238);
+    background-color: var(--cor-secundaria);
     color: black;
 }
 
 body{
-    background-color: #b388e1;
+    background-color: var(--bg-color);
     
 }
-/*  Parte principal das duas páginas
-    obs: eu deixei em branco pq vi q seções onde é preciso ler muito texto, é melhor usar fundo branco e letra preta. Dá pra m
-*/
+
 main{
     display: flex;
     flex-direction: column;
-    background-color: #22048C;
     padding: 30px;
     margin: auto 80px auto 80px;
 }
 
 h2{
-    color: #f4bf0f;
+    color: var(--cor-secundaria);
     font-size: 48px;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 2px black;
+    font-family: var(--fonte-titulo);
 }
 h3{
-    color: #f4bf0f;
+    color: var(--cor-secundaria);
     font-size: 36px;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 2px black;
+    font-family: var(--fonte-titulo);
 }
 p{
-    color: white;
+    color: black;
     text-align: left;
     font-size: 16px;
-    text-shadow: 1px 1px 2px black;
-}
-section > h2{
-    color: #f4bf0f;
-    font-size: 48px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 5px black;
+    font-family: var(--fonte-texto);
 }
 
-section > h3{
-    color: #f4bf0f;
-    font-size: 36px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 5px black;
-}
-
-section > p {
-    color: #fff;
-    text-align: left;
-    font-size: 16px;
-    text-shadow: 1px 1px 5px black;
+section{
+    max-width: 50vw;
 }
 
 form{
     display: flex;
     flex-direction: column;
-    
-
+    min-width: 25vw;
 }
 
-input{
-    outline: 1px solid rgb(179, 179, 179);
-    background-color: #000;
+input:not([type="submit"]){
+    background-color: var(--bg-color-secundaria);
     border-radius: 3px;
     border: 0px;
-    color:rgb(133, 11, 238);
+    outline: 0px;
+    color:var(--cor-terciaria);
     margin-bottom: 10px;
     transition: outline 150ms;
     padding: 5px;
-    
 }
 
-input:focus{
-    outline: 1px solid rgb(133, 11, 238);
-    color:white
+input:not([type="submit"]):focus{
+    background-color: var(--bg-color);
+    outline: 1px solid var(--cor-terciaria);
+    color:black
 
+}
+
+select{
+    background-color: var(--bg-color-secundaria);
+    border-radius: 3px;
+    border: 0px;
+    color:var(--cor-terciaria);
+    margin-bottom: 10px;
+    transition: outline 150ms;
+    padding: 5px;
+}
+
+select:focus{
+    background-color: var(--bg-color);
+    outline: 1px solid var(--cor-terciaria);
+    color:black
 }
 
 label{
     margin-bottom: 5px;
     margin-top: 20px;
-    color: white;
+    color: black;
     
 }
 
@@ -158,35 +165,72 @@ section{
 .login{
     display: flex;
     flex-direction: column;
-    background-color: rgb(0, 0, 0);
     padding: 30px;
     border-radius: 7px;
     margin: auto;
+    background-color: white;
 }
 .login > h3{
-    color: #f4bf0f;
+    color: var(--cor-secundaria);
     font-size: 48px;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 5px black;
 }
 .login > p{
-    color: #fff;
+    color: black;
     text-align: left;
     font-size: 16px;
-    text-shadow: 1px 1px 5px black;
     
 }
+
 .p-button{
+    cursor: pointer;
     align-self: center;
     text-decoration: none;
     text-align: center;
     padding: 10px;
     border-radius: 3px;
     outline: 0px;
+    border: 0px;
     color: white;
-    background-color: rgb(133, 11, 238);
-    margin-top: 20px;
+    background-color: var(--cor-primaria);
+    margin: 20px 0px;
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.641);
-    text-shadow: 1px 1px 2px black;
+    transition: background-color .2s, color .2s;
+}
+
+.p-button:hover{
+    color: var(--cor-primaria);
+    background: white;
+}
+
+.button-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#pc-form{
+    background-color: var(--cor-primaria);
+    border-radius: 3px;
+}
+
+#pc-form h2, #pc-form p, #pc-form label, #pc-form a{
+    color: white;
+}
+
+#pc-form input:not([type="submit"]), #pc-form select{
+    color: var(--cor-primaria);
+}
+
+#pc-form input:not([type="submit"]):focus, #pc-form select:focus{
+    background-color: var(--bg-color);
+    outline: 0px;
+    color:black
+}
+
+#pc-form .p-button{
+    outline: 2px solid white;
+    box-shadow: none;
 }
