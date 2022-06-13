@@ -74,6 +74,15 @@ main{
     margin: auto 80px auto 80px;
 }
 
+h1{
+    color: var(--cor-secundaria);
+    font-size: 54px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: var(--fonte-titulo);
+}
+
 h2{
     color: var(--cor-secundaria);
     font-size: 48px;
@@ -152,15 +161,6 @@ section{
     padding: 30px;
     margin: auto;
 }
-/*.intro{
-    display: flex;
-    flex-direction: column;
-    background-color: #22048C;
-    padding: 30px;
-    border-radius: 7px;
-    margin: auto;
-    
-}*/
 
 .login{
     display: flex;
@@ -181,6 +181,29 @@ section{
     text-align: left;
     font-size: 16px;
     
+}
+
+.sumario{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color-secundaria);
+    margin: auto;
+    min-width: 50vw;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sumario > h2{
+    color: var(--cor-terciaria);
+}
+
+.sumario > a{
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.sumario > a:hover{
+    text-decoration: underline;
 }
 
 .p-button{
