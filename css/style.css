@@ -257,3 +257,7 @@ section{
     outline: 2px solid white;
     box-shadow: none;
 }
+
+object{
+    width: 100%;
+}
