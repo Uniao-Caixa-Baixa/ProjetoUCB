@@ -25,6 +25,7 @@ form.addEventListener('submit', function(e){
     form.elements.senha2.value = '';
 
     if (senha != senha2){
+        e.preventDefault();
         form.elements.senha.value = '';
         form.elements.senha2.value = '';
         window.alert('As senhas não combinam! Digite novamente...')
