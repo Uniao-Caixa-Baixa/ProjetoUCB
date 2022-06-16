@@ -10,13 +10,6 @@ form.addEventListener('submit', function(e){
     let senha = form.elements.senha.value;
     let senha2 = form.elements.senha2.value;
 
-    sessionStorage.arrayUser = JSON.stringify(arrayUser);
-
-    form.elements.user.value = '';
-    form.elements.email.value = '';
-    form.elements.senha.value = '';
-    form.elements.senha2.value = '';
-
     if (senha != senha2){
         e.preventDefault();
         form.elements.senha.value = '';
@@ -28,5 +21,13 @@ form.addEventListener('submit', function(e){
             "email": email,
             "senha": senha
         });
+        
+        sessionStorage.arrayUser = JSON.stringify(arrayUser);
+
+        form.elements.user.value = '';
+        form.elements.email.value = '';
+        form.elements.senha.value = '';
+        form.elements.senha2.value = '';
+    
     }
 })
