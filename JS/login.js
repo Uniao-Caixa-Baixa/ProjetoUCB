@@ -13,6 +13,8 @@ formulario.addEventListener('submit', function(e){
         if (nome == converteArrayUser[verificaLogin]['nome']){
             if (senha == converteArrayUser[verificaLogin]['senha']){
                 alert('o usuário existe!')
+            }else {
+                alert('Esse usuário não existe! Volte para a página de registro.')
             }
         }
         verificaLogin++;
