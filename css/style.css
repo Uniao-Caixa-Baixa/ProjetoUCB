@@ -261,3 +261,11 @@ section{
 object{
     width: 100%;
 }
+
+li{
+    padding: 10px;
+    color: var(--cor-primaria);
+    font-weight: bolder;
+    text-decoration: none;
+    list-style: none;
+}
