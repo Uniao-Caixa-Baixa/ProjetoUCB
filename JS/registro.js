@@ -10,13 +10,6 @@ form.addEventListener('submit', function(e){
     let senha = form.elements.senha.value;
     let senha2 = form.elements.senha2.value;
 
-    arrayUser.push({
-        "nome": nome,
-        "email": email,
-        "senha": senha,
-        "senha2": senha2
-    });
-
     sessionStorage.arrayUser = JSON.stringify(arrayUser);
 
     form.elements.user.value = '';
@@ -29,5 +22,11 @@ form.addEventListener('submit', function(e){
         form.elements.senha.value = '';
         form.elements.senha2.value = '';
         window.alert('As senhas não combinam! Digite novamente...')
+    }else{
+        arrayUser.push({
+            "nome": nome,
+            "email": email,
+            "senha": senha
+        });
     }
 })
