@@ -7,6 +7,7 @@
     <title>Página de Registro</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../JS/registro.js" defer></script>
 </head>
 <body>
     <header><h1>Meu PC roda?</h1>
@@ -16,17 +17,17 @@
     <object data="./partials/navbar.html"></object>
     <main>
         <section class="login">
-            <form action="">
+            <form id="registro" action="">
                 <h3>Registro</h3>
                 <p>Preencha os campos abaixo:</p>
                 <label for="">Usuário:</label>
-                <input type="text" placeholder="Digite seu nome">
+                <input type="text" name="user" placeholder="Digite seu nome">
                 <label for="">E-mail:</label>
-                <input type="email" placeholder="Digite seu e-mail">
+                <input type="email" name="email" placeholder="Digite seu e-mail">
                 <label for="">Senha:</label>
-                <input type="password" placeholder="Digite sua senha">
+                <input type="password" name="senha" placeholder="Digite sua senha">
                 <label for="">Senha (confirmação)</label>
-                <input type="password" placeholder="Confirme sua senha">
+                <input type="password" name="senha2" placeholder="Confirme sua senha">
                 <input class="p-button" type="submit">
             </form>
         </section>

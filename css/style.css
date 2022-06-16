@@ -119,7 +119,7 @@ input:not([type="submit"]){
     border-radius: 3px;
     border: 0px;
     outline: 0px;
-    color:var(--cor-terciaria);
+    color: rgb(175, 97, 97);
     margin-bottom: 10px;
     transition: outline 150ms;
     padding: 5px;
