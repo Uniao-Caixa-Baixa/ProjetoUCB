@@ -1,8 +1,8 @@
 const arrayUser = JSON.parse(sessionStorage.arrayUser);
 
-arrayUserforEach(function(el){
+arrayUser.forEach(function(el){
     const li = document.createElement('li');
-    li.innerText = `Nome ${el.user} - Email: ${el.email}`;
+    li.innerText = `Nome ${el.nome} - Email: ${el.email}`;
 
     const listaUsuarios = document.querySelector('#lista');
     listaUsuarios.append(li);
