@@ -222,6 +222,7 @@ section{
     transition: background-color .2s, color .2s;
 }
 
+
 .p-button:hover{
     color: var(--cor-primaria);
     background: white;
@@ -268,4 +269,14 @@ li{
     font-weight: bolder;
     text-decoration: none;
     list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--cor-secundaria);
+
+}
+
+a:hover:not([class="navbar"]){
+    color: black;
 }
