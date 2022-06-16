@@ -1,16 +1,22 @@
 let formulario = document.querySelector('form');
-console.log(formulario);
 const converteArrayUser = JSON.parse(sessionStorage.arrayUser); 
+
+let verificaLogin = 0;
 
 formulario.addEventListener('submit', function(e){
     e.preventDefault();
-    const nome = formulario.elements.nome.value;
-    const senha = formulario.elements.senha.value;
+    let nome = formulario.elements.nome.value;
+    let senha = formulario.elements.senha.value;
+  
 
-    converteArrayUser.forEach(function(){
-        if (nome.value == converteArrayUser['nome']){
-            alert('Esse usuário existe!')
+    while (verificaLogin<converteArrayUser.length){
+        if (nome == converteArrayUser[verificaLogin]['nome']){
+            if (senha == converteArrayUser[verificaLogin]['senha']){
+                alert('o usuário existe!')
+            }
         }
-    });
+        verificaLogin++;
+    }
+    
 
 })
