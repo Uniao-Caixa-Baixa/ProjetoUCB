@@ -13,6 +13,9 @@ form.addEventListener('submit', function(e){
     if (!verificaNome(nome)){
         form.elements.user.value = '';
         window.alert('Nome de usuário já está em uso! Tente outro nome')
+    }else if (!verificaEmail(email)){
+        form.elements.email.value = '';
+        window.alert('Email já está em uso! Utilize outro')
     }else if (!verificaSenha(senha, senha2)){
         form.elements.senha.value = '';
         form.elements.senha2.value = '';
@@ -46,6 +49,16 @@ function verificaNome(nome){
     let valido = true
     arrayUser.forEach(user => {
         if (user['nome'] == nome){
+            valido = false
+        }
+    });
+    return valido
+}
+
+function verificaEmail(email){
+    let valido = true
+    arrayUser.forEach(user => {
+        if (user['email'] == email){
             valido = false
         }
     });
