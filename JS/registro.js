@@ -33,6 +33,7 @@ form.addEventListener('submit', function(e){
         form.elements.email.value = '';
         form.elements.senha.value = '';
         form.elements.senha2.value = '';
+        window.alert('Conta criada com sucesso!')
     
     }
 })
