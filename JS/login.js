@@ -10,11 +10,11 @@ formulario.addEventListener('submit', function(e){
   
 
     while (verificaLogin<converteArrayUser.length){
-        if (nome == converteArrayUser[verificaLogin]['nome']){
+        if (nome == converteArrayUser[verificaLogin]['nome'] || nome == converteArrayUser[verificaLogin]['email']){
             if (senha == converteArrayUser[verificaLogin]['senha']){
-                alert('o usuário existe!')
+                window.alert('o usuário existe!')
             }else {
-                alert('Esse usuário não existe! Volte para a página de registro.')
+                window.alert('Esse usuário não existe! Volte para a página de registro.')
             }
         }
         verificaLogin++;
