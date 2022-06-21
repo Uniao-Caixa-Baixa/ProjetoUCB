@@ -20,15 +20,14 @@ form.addEventListener('submit', function(e){
         window.alert('As senhas não combinam! Digite novamente...')
     }else{
         while (alteraSenha<arrayUser.length){
-            console.log('alterou!');
             if (email == arrayUser[alteraSenha]['email']){
-                console.log('alterou!');
                 arrayUser[alteraSenha]['senha'] = senha;
             }
             alteraSenha++;
         }
         
         sessionStorage.arrayUser = JSON.stringify(arrayUser);
+        form.elements.email.value = '';
         form.elements.senha.value = '';
         form.elements.senha2.value = '';
         window.alert('Senha alterada com sucesso!')
