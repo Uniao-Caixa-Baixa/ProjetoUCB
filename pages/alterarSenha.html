@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudança de senha</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../JS/alterarSenha.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Meu PC roda?</h1>
+        <p><strong>Descubra agora se o seu computador pode rodar qualquer jogo popular para PC.</strong></p>
+    </header>
+    <!--O nav está fora do header por uma questão de praticidade-->
+    <object data="./partials/navbar.html"></object>
+    <main>
+        <section class="login">
+            <form id="alterarSenha" action="">
+                <h3>Solicitação de mudança de senha</h3>
+                <p>Preencha os campos abaixo:</p>
+                <label for="">E-mail:</label>
+                <input type="email" name="email" placeholder="Digite seu e-mail">
+                <label for="">Nova senha:</label>
+                <input type="password" name="senha" placeholder="Digite sua senha">
+                <label for="">Nova senha (confirmação)</label>
+                <input type="password" name="senha2" placeholder="Confirme sua senha">
+                <input class="p-button" type="submit">
+            </form>
+        </section>
+        <a class="p-button" href="../index.html">Voltar</a>
+    </main>
+</body>
+</html>
