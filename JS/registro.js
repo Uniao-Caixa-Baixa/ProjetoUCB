@@ -2,6 +2,7 @@
 const form = document.querySelector('#registro')
 
 let arrayUser = JSON.parse(sessionStorage.arrayUser);
+const tipoUsuario = 'COMUM';
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -24,7 +25,9 @@ form.addEventListener('submit', function(e){
         arrayUser.push({
             "nome": nome,
             "email": email,
-            "senha": senha
+            "senha": senha,
+            "usuario": tipoUsuario
+
         });
         
         sessionStorage.arrayUser = JSON.stringify(arrayUser);
