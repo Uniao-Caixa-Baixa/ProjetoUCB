@@ -5,7 +5,7 @@ let zeraLista = document.querySelector('#listaJogos');
 
 mostraJogos(arrayGames)
 
-filtro[0].addEventListener('click', function(){
+filtro[0].addEventListener('change', function(){
     let filtroEstilo = filtro[0].value;
     zeraLista.innerText = '';
     let jogosMostrados
@@ -18,7 +18,7 @@ filtro[0].addEventListener('click', function(){
     mostraJogos(jogosMostrados)
 })
 
-filtro[1].addEventListener('click', function(){
+filtro[1].addEventListener('change', function(){
     let filtroPreco = filtro[1].value;
     zeraLista.innerText = '';
     let jogosMostrados
