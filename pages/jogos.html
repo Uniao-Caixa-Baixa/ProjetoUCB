@@ -17,24 +17,27 @@
     </header>
     <object data="./partials/navbar.html"></object>
     <h1>Lista de Jogos</h1>
-    <label for="ordem">Ordenar por:</label>
-    <select name="estilo" id="estilo">
-        <option value="Estilo">Estilo</option>
-        <option value="Luta">Luta</option>
-        <option value="Sobrevivencia">Sobrevivencia</option>
-        <option value="FPS">FPS</option>
-        <option value="Moba">Moba</option>
-        <option value="Ação/Aventura">Ação/Aventura</option>
-    </select>
-
-    <select name="preco" id="preco">
-        <option value="Preco">Preço</option>
-        <option value="Gratuitos">Gratuitos</option>
-        <option value="Pagos">Pagos</option>
-    </select>
-    <ul id="listaJogos">
-
-    </ul>
+    <section>
+        <div id="filtroJogos">
+            <label for="ordem">Filtrar por:</label>
+            <select name="estilo" id="estilo">
+                <option value="Estilo">Estilo</option>
+                <option value="Luta">Luta</option>
+                <option value="Sobrevivencia">Sobrevivencia</option>
+                <option value="FPS">FPS</option>
+                <option value="Moba">Moba</option>
+                <option value="Ação/Aventura">Ação/Aventura</option>
+            </select>
+            <select name="preco" id="preco">
+                <option value="Preco">Preço</option>
+                <option value="Gratuitos">Gratuitos</option>
+                <option value="Pagos">Pagos</option>
+            </select>
+        </div>
+        
+        <ul id="listaJogos">
+        </ul>
+    </section>
     
 </body>
 </html>
