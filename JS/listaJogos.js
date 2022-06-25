@@ -1,37 +1,34 @@
 const arrayGames = JSON.parse(sessionStorage.arrayGames);
 let filtro = document.querySelectorAll('select');
 let zeraLista = document.querySelector('#listaJogos');
-
+let jogosMostrados = arrayGames
 
 mostraJogos(arrayGames)
 
-filtro[0].addEventListener('change', function(){
+filtro.forEach(function(el){
+    el.addEventListener('change', atualizaLista)
+})
+
+function atualizaLista(){
+    // Filtro de estilo
     let filtroEstilo = filtro[0].value;
     zeraLista.innerText = '';
-    let jogosMostrados
-    if(filtroEstilo == 'Estilo'){
-        jogosMostrados = arrayGames
-    }else{
-        console.log('estilo selecionado')
-        jogosMostrados = arrayGames.filter(filtraEstilo(filtroEstilo))
+    let jogosMostrados = arrayGames
+    if(filtroEstilo != 'Estilo'){
+        jogosMostrados = jogosMostrados.filter(filtraEstilo(filtroEstilo))
     }
-    mostraJogos(jogosMostrados)
-})
 
-filtro[1].addEventListener('change', function(){
+    // Filtro de preco
     let filtroPreco = filtro[1].value;
-    zeraLista.innerText = '';
-    let jogosMostrados
     if(filtroPreco == 'Preco'){
-        jogosMostrados = arrayGames
+        jogosMostrados = jogosMostrados
     }else if (filtroPreco == 'Gratuitos'){
-        jogosMostrados = arrayGames.filter(filtraGratuito)
+        jogosMostrados = jogosMostrados.filter(filtraGratuito)
     }else if(filtroPreco == 'Pagos'){
-        jogosMostrados = arrayGames.filter(filtraPago)
+        jogosMostrados = jogosMostrados.filter(filtraPago)
     }
     mostraJogos(jogosMostrados)
-})
-
+}
 
 function mostraJogos(array){
     array.forEach(function(el){
