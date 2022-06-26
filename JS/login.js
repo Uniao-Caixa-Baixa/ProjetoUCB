@@ -1,6 +1,6 @@
 let formulario = document.querySelector('form');
 const converteArrayUser = JSON.parse(sessionStorage.arrayUser); 
-
+const linkComp = document.getElementById('linkComp')
 
 formulario.addEventListener('submit', function(e){
     e.preventDefault();
@@ -20,7 +20,9 @@ formulario.addEventListener('submit', function(e){
         }else{
             mensagem = 'O usuário não existe!'
         }
+        linkComp.style.display = 'flex'
         verificaLogin++;
+
     }
     window.alert(mensagem)
     

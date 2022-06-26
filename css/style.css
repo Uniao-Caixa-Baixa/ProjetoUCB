@@ -74,6 +74,13 @@ main{
     margin: auto 80px auto 80px;
 }
 
+#mainComp{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    color: white;
+}
+
 h1{
     color: var(--cor-secundaria);
     font-size: 54px;
@@ -111,6 +118,12 @@ section{
     max-width: 60vw;
 }
 
+#componentes{
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+
 form{
     display: flex;
     flex-direction: column;
@@ -134,6 +147,18 @@ input:not([type="submit"]):focus{
     color:black
 
 }
+
+.inserc{
+    border: none;
+    border-radius: 3px;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 5px;
+    width: 300px;
+    margin-top: 20px;
+}
+
+
 
 select{
     background-color: var(--bg-color-secundaria);
@@ -177,6 +202,8 @@ label{
     text-align: left;
     font-size: 16px;
 }
+
+
 
 .sumario{
     display: flex;
@@ -255,6 +282,26 @@ label{
     box-shadow: none;
 }
 
+#formComp{
+    display: none;
+    flex-direction: column;
+}
+
+#divProc{
+    display: none;
+    flex-direction: column;
+}
+
+#divPlacaMae{
+    display: none;
+    flex-direction: column;
+}
+
+#divPlacaVideo{
+    display: none;
+    flex-direction: column;
+}
+
 object{
     width: 100%;
 }
@@ -271,6 +318,19 @@ a{
     text-decoration: none;
     color: var(--cor-secundaria);
 
+}
+
+#linkComp{
+    background-color: var(--cor-primaria);
+    border-radius: 3px;
+    padding: 5px;
+    color: yellow;
+    display: none;
+}
+
+#linkComp:hover{
+    color: white;
+    transition-duration: 0.5s;
 }
 
 a:hover:not([class="navbar"]){
