@@ -105,7 +105,10 @@ p{
 }
 
 section{
-    max-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 60vw;
 }
 
 form{
@@ -155,13 +158,6 @@ label{
     font-weight: bold;
 }
 
-section{
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    margin: auto;
-}
-
 .login{
     display: flex;
     flex-direction: column;
@@ -180,7 +176,6 @@ section{
     color: black;
     text-align: left;
     font-size: 16px;
-    
 }
 
 .sumario{
@@ -238,6 +233,7 @@ section{
 #pc-form{
     background-color: var(--cor-primaria);
     border-radius: 3px;
+    padding: 20px;
 }
 
 #pc-form h2, #pc-form p, #pc-form label, #pc-form a{
