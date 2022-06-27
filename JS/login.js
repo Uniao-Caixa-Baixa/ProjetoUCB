@@ -37,6 +37,7 @@ formulario.addEventListener('submit', function(e){
                 }
             }else {
                 mensagem = 'Senha incorreta! Tente novamente'
+                break;
             }
         }else{
             mensagem = 'O usuário não existe!'
