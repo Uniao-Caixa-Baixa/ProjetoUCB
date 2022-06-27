@@ -44,9 +44,9 @@ function filtraEstilo(filtro){
 }
 
 function filtraGratuito(el){
-    return el.preco == '0.00'
+    return el.preco == '0'
 }
 
 function filtraPago(el){
-    return el.preco != '0.00'
+    return el.preco != '0'
 }

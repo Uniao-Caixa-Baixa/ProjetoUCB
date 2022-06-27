@@ -322,14 +322,14 @@ a{
 
 }
 
-#inserc, #alteraDados{
+#inserc, #alteraDados, #isercGames, #alteraCargo{
     border-radius: 3px;
     padding: 3px;
     display: none;
     margin: 10px;
 }
 
-#inserc:hover, #alteraDados:hover{
+#inserc:hover, #alteraDados:hover, #isercGames:hover, #alteraCargo:hover{
     color: black;
     transition-duration: 0.5s;
 }
