@@ -37,29 +37,28 @@ formDados.addEventListener('submit', function(e){
     let novoNome = formDados.elements.novoNome.value 
     let novaSenha = formDados.elements.novaSenha.value
 
-    arrayUser.push({
+    arrayLogin.push({
         "nome": novoNome,
         "senha": novaSenha
     })
 
 
     while(alteraNome<arrayUser.length){
-        if(arrayLogin[0]['nome'] == arrayUser[alteraNome]['email']){
+        if(arrayLogin[0]['nome'] == arrayUser[alteraNome]['email']  && arrayLogin[1]['nome'] != ""){
             arrayUser[alteraNome]['nome'] = arrayLogin[1]['nome']
         }
-        console.log('entrou')
         alteraNome++
     }while(alteraSenha<arrayUser.length){
-        if(arrayLogin[0]['senha'] == arrayUser[alteraSenha]['senha']){
+        if(arrayLogin[0]['senha'] == arrayUser[alteraSenha]['senha'] && arrayLogin[1]['senha'] != ""){
             arrayUser[alteraSenha]['senha'] = arrayLogin[1]['senha']
         }
         alteraSenha++
     }
 
+    arrayLogin = []
     sessionStorage.arrayLogin = JSON.stringify(arrayLogin)
     sessionStorage.arrayUser =  JSON.stringify(arrayUser)
     formDados.elements.novoNome.value = ''
     formDados.elements.novaSenha.value = ''
-    window.alert('Dados alterados com sucesso!')
-    
+    window.alert('Dados alterados com sucesso!')   
 })
