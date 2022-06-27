@@ -123,6 +123,12 @@ section{
     margin-top: 30px;
 }
 
+#update{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    flex-direction: column;
+}
 
 form{
     display: flex;
@@ -282,22 +288,18 @@ label{
     box-shadow: none;
 }
 
-#formComp{
+#formComp, #formDados{
     display: none;
     flex-direction: column;
 }
 
-#divProc{
+#divProc, #divPlacaMae, #divPlacaVideo{
     display: none;
     flex-direction: column;
 }
 
-#divPlacaMae{
-    display: none;
-    flex-direction: column;
-}
 
-#divPlacaVideo{
+#divNome, #divSenha{
     display: none;
     flex-direction: column;
 }
@@ -320,16 +322,15 @@ a{
 
 }
 
-#linkComp{
-    background-color: var(--cor-primaria);
+#inserc, #alteraDados{
     border-radius: 3px;
-    padding: 5px;
-    color: yellow;
+    padding: 3px;
     display: none;
+    margin: 10px;
 }
 
-#linkComp:hover{
-    color: white;
+#inserc:hover, #alteraDados:hover{
+    color: black;
     transition-duration: 0.5s;
 }
 
