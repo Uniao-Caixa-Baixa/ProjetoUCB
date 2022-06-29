@@ -51,8 +51,10 @@ formDados.addEventListener('submit', function(e){
         }
         alteraNome++
     }while(alteraSenha<arrayUser.length){
-        if(arrayLogin[0]['senha'] == arrayUser[alteraSenha]['senha'] && arrayLogin[1]['senha'] != ""){
-            arrayUser[alteraSenha]['senha'] = arrayLogin[1]['senha']
+        if(arrayLogin[0]['senha'] == arrayUser[alteraSenha]['senha']){
+            if (arrayLogin[1]['senha'] != ""){
+                arrayUser[alteraSenha]['senha'] = arrayLogin[1]['senha']
+            }
         }
         alteraSenha++
     }
