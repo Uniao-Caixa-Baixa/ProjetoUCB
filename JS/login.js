@@ -8,47 +8,48 @@ const linkAlteraCargos = document.getElementById('alteraCargo')
 
 formulario.addEventListener('submit', function(e){
     e.preventDefault();
-    let verificaLogin = 0;
     let mensagem
     let nome = formulario.elements.nome.value;
     let senha = formulario.elements.senha.value;
-  
 
-    while (verificaLogin<converteArrayUser.length){
-        if (nome == converteArrayUser[verificaLogin]['nome'] || nome == converteArrayUser[verificaLogin]['email']){
-            if (senha == converteArrayUser[verificaLogin]['senha']){
-                mensagem = ` ${nome}, seja bem-vindo!`
-                if(converteArrayUser[verificaLogin]['usuario'] == 'COMUM'){
-                    linkInserc.style.display = 'flex'
-                    linkAlteraDados.style.display ='flex'
-                    arrayLogin.push({
-                        "nome": nome,
-                        "senha": senha
-                    })
-                    break;
-                }else{
-                    linkInsercGames.style.display = 'flex'
-                    linkAlteraCargos.style.display ='flex'
-                    arrayLogin.push({
-                        "nome": nome,
-                        "senha": senha
-                    })
-                    break;
-                }
-            }else {
-                mensagem = 'Senha incorreta! Tente novamente'
-                break;
-            }
+    let user = findUser(nome)
+    if (user) {
+        if (user['senha'] == senha){
+            mensagem = `${user['nome']}, seja bem-vindo!`;
+            logar(user)
         }else{
-            mensagem = 'O usuário não existe!'
+            mensagem = 'Senha incorreta! Tente novamente'
+            formulario.elements.senha.value = ''
         }
-        
-        verificaLogin++;
-
+    } else {
+        mensagem = 'Usuário não existe'
+        formulario.elements.nome.value = ''
+        formulario.elements.senha.value = ''
     }
     sessionStorage.arrayLogin = JSON.stringify(arrayLogin)
 
     window.alert(mensagem)
-    
 
 })
+
+function findUser(nome){
+    let user = null
+    converteArrayUser.forEach(el => {
+        if (el['nome'] == nome || el['email'] == nome){
+            user = el
+        }
+    });
+    return user
+}
+
+function logar(user){
+    if(user['usuario'] == 'COMUM'){
+        linkInserc.style.display = 'flex'
+        linkAlteraDados.style.display = 'flex'
+    }else{
+        linkInsercGames.style.display = 'flex'
+        linkAlteraCargos.style.display ='flex'
+    }
+    arrayLogin.push(user)
+    sessionStorage.arrayLogin = JSON.stringify(arrayLogin)
+}
