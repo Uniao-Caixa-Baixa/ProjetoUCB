@@ -1,5 +1,5 @@
 let formulario = document.querySelector('form');
-let arrayLogin = JSON.parse(sessionStorage.arrayLogin)
+let currentUser = JSON.parse(sessionStorage.currentUser)
 const converteArrayUser = JSON.parse(sessionStorage.arrayUser); 
 const linkInserc = document.getElementById('inserc')
 const linkAlteraDados = document.getElementById('alteraDados')
@@ -26,7 +26,7 @@ formulario.addEventListener('submit', function(e){
         formulario.elements.nome.value = ''
         formulario.elements.senha.value = ''
     }
-    sessionStorage.arrayLogin = JSON.stringify(arrayLogin)
+    sessionStorage.currentUser = JSON.stringify(currentUser)
 
     window.alert(mensagem)
 
@@ -50,6 +50,6 @@ function logar(user){
         linkInsercGames.style.display = 'flex'
         linkAlteraCargos.style.display ='flex'
     }
-    arrayLogin.push(user)
-    sessionStorage.arrayLogin = JSON.stringify(arrayLogin)
+    currentUser = user
+    sessionStorage.currentUser = JSON.stringify(currentUser)
 }

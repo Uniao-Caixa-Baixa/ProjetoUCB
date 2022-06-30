@@ -1,7 +1,7 @@
 let checkUpdate = document.getElementById('update')
 let formDados = document.getElementById('formDados')
 let arrayUser = JSON.parse(sessionStorage.arrayUser)
-let arrayLogin = JSON.parse(sessionStorage.arrayLogin)
+let currentUser = JSON.parse(sessionStorage.currentUser)
 
 let alteraNome = 0
 let alteraSenha = 0
@@ -36,33 +36,32 @@ formDados.addEventListener('submit', function(e){
 
     let novoNome = formDados.elements.novoNome.value 
     let novaSenha = formDados.elements.novaSenha.value
+    let currentUserIndex = findUserIndex(currentUser)
 
-    arrayLogin.push({
-        "nome": novoNome,
-        "senha": novaSenha
-    })
-
-
-    while(alteraNome<arrayUser.length){
-        if(arrayLogin[0]['nome'] == arrayUser[alteraNome]['nome'] || arrayLogin[0]['nome'] == arrayUser[alteraNome]['email']){
-            if (arrayLogin[1]['nome'] != ""){
-                arrayUser[alteraNome]['nome'] = arrayLogin[1]['nome']
-            }
-        }
-        alteraNome++
-    }while(alteraSenha<arrayUser.length){
-        if(arrayLogin[0]['senha'] == arrayUser[alteraSenha]['senha']){
-            if (arrayLogin[1]['senha'] != ""){
-                arrayUser[alteraSenha]['senha'] = arrayLogin[1]['senha']
-            }
-        }
-        alteraSenha++
+    if (novoNome != ""){
+        arrayUser[currentUserIndex]['nome'] = novoNome
+        currentUser['nome'] = novoNome
     }
+    if (novaSenha != ""){
+        window.alert()
+        arrayUser[currentUserIndex]['senha'] = novaSenha
+        currentUser['senha'] = novaSenha
+    }
+    
 
-    arrayLogin = []
-    sessionStorage.arrayLogin = JSON.stringify(arrayLogin)
+    sessionStorage.currentUser = JSON.stringify(currentUser)
     sessionStorage.arrayUser =  JSON.stringify(arrayUser)
     formDados.elements.novoNome.value = ''
     formDados.elements.novaSenha.value = ''
-    window.alert('Dados alterados com sucesso!')   
+    window.alert('Dados alterados com sucesso!')
 })
+
+function findUserIndex(user){
+    let userIndex = null
+    arrayUser.forEach((el, index) => {
+        if (el['nome'] == user['nome']){
+            userIndex = index
+        }
+    });
+    return userIndex
+}
