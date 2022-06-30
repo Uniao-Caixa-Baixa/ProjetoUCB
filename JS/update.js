@@ -1,7 +1,6 @@
 let checkUpdate = document.getElementById('update')
 let formDados = document.getElementById('formDados')
 let arrayUser = JSON.parse(sessionStorage.arrayUser)
-let currentUser = JSON.parse(sessionStorage.currentUser)
 
 let alteraNome = 0
 let alteraSenha = 0
@@ -43,7 +42,6 @@ formDados.addEventListener('submit', function(e){
         currentUser['nome'] = novoNome
     }
     if (novaSenha != ""){
-        window.alert()
         arrayUser[currentUserIndex]['senha'] = novaSenha
         currentUser['senha'] = novaSenha
     }

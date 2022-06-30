@@ -20,12 +20,10 @@ form.addEventListener('submit', function(e){
         form.elements.senha2.value = '';
         window.alert('As senhas não combinam! Digite novamente...')
     }else{
-        let currentUserIndex = findUserIndex(currentUser)
+        let currentUserIndex = findUserIndex(email)
         arrayUser[currentUserIndex]['senha'] = senha
-        currentUser['senha'] = senha
         
         sessionStorage.arrayUser = JSON.stringify(arrayUser);
-        sessionStorage.currentUser = JSON.stringify(currentUser);
         form.elements.email.value = '';
         form.elements.senha.value = '';
         form.elements.senha2.value = '';
@@ -52,10 +50,10 @@ function verificaEmail(email){
     return valido
 }
 
-function findUserIndex(user){
+function findUserIndex(email){
     let userIndex = null
     arrayUser.forEach((el, index) => {
-        if (el['nome'] == user['nome']){
+        if (el['email'] == email){
             userIndex = index
             
         }
