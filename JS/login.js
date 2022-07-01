@@ -6,6 +6,10 @@ const linkAlteraDados = document.getElementById('alteraDados')
 const linkInsercGames = document.getElementById('isercGames')
 const linkAlteraCargos = document.getElementById('alteraCargo')
 
+if (JSON.stringify(currentUser) != '{}') {
+    window.location.href = '../pages/dashboard.html'
+}
+
 formulario.addEventListener('submit', function(e){
     e.preventDefault();
     let mensagem
@@ -43,13 +47,7 @@ function findUser(nome){
 }
 
 function logar(user){
-    if(user['usuario'] == 'COMUM'){
-        linkInserc.style.display = 'flex'
-        linkAlteraDados.style.display = 'flex'
-    }else{
-        linkInsercGames.style.display = 'flex'
-        linkAlteraCargos.style.display ='flex'
-    }
     currentUser = user
     sessionStorage.currentUser = JSON.stringify(currentUser)
+    window.location.href = '../pages/dashboard.html'
 }

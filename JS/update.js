@@ -1,6 +1,7 @@
 let checkUpdate = document.getElementById('update')
 let formDados = document.getElementById('formDados')
 let arrayUser = JSON.parse(sessionStorage.arrayUser)
+var currentUser = JSON.parse(sessionStorage.currentUser)
 
 let alteraNome = 0
 let alteraSenha = 0

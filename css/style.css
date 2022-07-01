@@ -256,6 +256,20 @@ label{
     background: white;
 }
 
+.s-button{
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    outline: 0px;
+    border: 1px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+    background-color: var(--bg-color);
+    margin: 10px 0px;
+    transition: background-color .2s, color .2s;
+}
+
 .button-box{
     display: flex;
     flex-direction: row;
@@ -322,16 +336,14 @@ a{
 
 }
 
-#inserc, #alteraDados, #isercGames, #alteraCargo{
-    border-radius: 3px;
-    padding: 3px;
+.adm{
     display: none;
-    margin: 10px;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-#inserc:hover, #alteraDados:hover, #isercGames:hover, #alteraCargo:hover{
-    color: black;
-    transition-duration: 0.5s;
+#redirect-login, #dashboard{
+    display: none;
 }
 
 a:hover:not([class="navbar"]){
