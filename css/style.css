@@ -18,48 +18,34 @@
     --fonte-texto: 'Open Sans', sans-serif;
 }
 
-/*CABEÇALHO DAS DUAS PÁGINAS*/
-header{
-    background-color: var(--cor-primaria);
-    text-align: center;
-    margin: 0px;
-    padding: 20px;
+.header{
+    width: 100%;
+    height: 10vh;
 }
-/*H1 DO CABEÇALHO DAS DUAS PÁGINAS*/
-header > h1 {
-    font-family: 'Games', Arial, sans-serif;
-    color: #fff;
-    text-align: center;
-    font-size: 64px;
-}
-/*PARÁGRAFO DO CABEÇALHO DAS DUAS PÁGINAS*/
-header > p{
-    text-align: center;
-    color: white;
-    padding: 10px;
-    font-family: var(--fonte-texto);
-}
-/*  c///orpo *tem essa cor de fundo para contrastar com o '<main>'
-*/
 
-/*O nav está fora do header por uma questão de praticidade*/
-nav{
+header{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vh;
     background-color: var(--cor-primaria);
-    padding: 10px;
-    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.363);
 }
-nav a{
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
-    transition-duration: 0.5s;
+
+header > nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20vw;
 }
-nav a:hover{
-    background-color: var(--cor-secundaria);
-    color: black;
+
+header > nav > a{
+    color: var(--bg-color);
+    font-family: var(--fonte-titulo);
+    font-size: 24px;
+}
+
+header > a > img{
+    height: 100vh;
+    padding: 20px;
 }
 
 body{
@@ -316,10 +302,6 @@ label{
 #divNome, #divSenha{
     display: none;
     flex-direction: column;
-}
-
-object{
-    width: 100%;
 }
 
 li{
