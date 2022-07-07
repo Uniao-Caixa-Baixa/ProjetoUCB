@@ -1,5 +1,10 @@
 
 const form = document.querySelector('#registro')
+const currentUser = JSON.parse(sessionStorage.currentUser)
+
+if (JSON.stringify(currentUser) != '{}') {
+    window.location.href = '../pages/dashboard.html'
+}
 
 let arrayUser = JSON.parse(sessionStorage.arrayUser);
 const tipoUsuario = 'COMUM';
