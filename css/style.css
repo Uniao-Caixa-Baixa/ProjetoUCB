@@ -327,7 +327,3 @@ a{
 #redirect-login, #dashboard{
     display: none;
 }
-
-a:hover:not([class="navbar"]){
-    color: black;
-}
