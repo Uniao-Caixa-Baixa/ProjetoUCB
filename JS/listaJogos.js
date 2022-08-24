@@ -1,6 +1,7 @@
-const arrayGames = JSON.parse(sessionStorage.arrayGames);
-let filtro = document.querySelectorAll('select');
-let zeraLista = document.querySelector('#listaJogos');
+const arrayGames    = JSON.parse(sessionStorage.arrayGames)
+const configPC      = JSON.parse(sessionStorage.configPC)
+let filtro = document.querySelectorAll('select')
+let zeraLista = document.querySelector('#listaJogos')
 let jogosMostrados = arrayGames
 
 mostraJogos(arrayGames)
@@ -8,6 +9,7 @@ mostraJogos(arrayGames)
 filtro.forEach(function(el){
     el.addEventListener('change', atualizaLista)
 })
+
 
 function atualizaLista(){
     // Filtro de estilo

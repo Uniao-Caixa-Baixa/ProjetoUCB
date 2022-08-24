@@ -19,8 +19,8 @@
                 <label for="">Nome</label>
                 <input name="nome" type="text" required>
                 <label for="">Estilo:</label>
-                <select name="estilo">
-                    <option value="Estilo">Estilo</option>
+                <select name="estilo" required>
+                    <option value="" selected disabled hidden></option>
                     <option value="Luta">Luta</option>
                     <option value="Sobrevivencia">Sobrevivencia</option>
                     <option value="FPS">FPS</option>
@@ -31,6 +31,8 @@
                 </select>
                 <label for="">R$</label>
                 <input type="number" min="0.00" max="999999.99" step="0.01" name="preco" required>
+                <label for="">Tier</label>
+                <input type="number" min="1" max="7" name="tier" required>
                 <input class="p-button" type="submit">
             </form>
         </section>
