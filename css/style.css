@@ -18,9 +18,14 @@
     --fonte-texto: 'Open Sans', sans-serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .header{
     width: 100%;
     height: 12vh;
+    margin-bottom: 5vh;
 }
 
 header{
@@ -56,8 +61,6 @@ body{
 main{
     display: flex;
     flex-direction: column;
-    padding: 30px;
-    margin: auto 80px auto 80px;
 }
 
 #mainComp{
@@ -220,6 +223,14 @@ label{
     text-decoration: underline;
 }
 
+.divisor{
+    padding: 15vh;
+    margin: 0;
+    background-color: white;
+    margin-bottom: 5vh;
+    font-size: 62px;
+}
+
 .p-button{
     cursor: pointer;
     align-self: center;
@@ -326,4 +337,41 @@ a{
 
 #redirect-login, #dashboard{
     display: none;
+}
+
+#landing-header{
+    background-color: var(--bg-color);
+}
+
+#landing-header > nav > a{
+    color: var(--cor-primaria);
+}
+
+#landing-page{
+    max-width: 100%;
+    height: 85vh;
+    margin: 0;
+    background-image: url("../images/landing_page.png");
+}
+
+#landing-text{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 45%;
+    max-width: 50%;
+}
+
+#landing-text > h1{
+    color: var(--cor-primaria);
+    font-family: var(--fonte-texto);
+    font-size: calc(3vw + 60%);
+    text-align: left;
+}
+
+#landing-text > a{
+    max-width: 60%;
+    align-self: flex-start;
+    font-size: calc(2vw + 50%);
+    padding: 1vw;
 }

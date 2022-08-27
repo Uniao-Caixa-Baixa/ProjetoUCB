@@ -12,31 +12,37 @@
     <title>Meu PC roda?</title>
 </head>
 <body>
-    <object data="pages/partials/header.html" class="header"></object>
+    <object data="pages/partials/landingHeader.html" class="header"></object>
     <main>
-        <h1>Bem-vindo</h1>
-            <section >
-                <form action="" id="pc-form">
-                    <h2>Meu PC roda?</h2>
-                    <p>Preencha os campos abaixo para ver quais jogos seu PC pode rodar</p>
-                    <label for="processador">Processador</label>
-                    <select name="processadores" id="processadores" required>
-                        <option value="" selected disabled hidden></option>
+        <section id="landing-page">
+            <div id="landing-text">
+                <h1>Descubra o que seu PC é capaz de fazer!</h1>
+                <a href="#pc-form" class="p-button">Comece agora!</a>
+            </div>
+        </section>
+        <h1 class="divisor">Comece por aqui</h1>
+        <section >
+            <form action="" id="pc-form">
+                <h2>Meu PC roda?</h2>
+                <p>Preencha os campos abaixo para ver quais jogos seu PC pode rodar</p>
+                <label for="processador">Processador</label>
+                <select name="processadores" id="processadores" required>
+                    <option value="" selected disabled hidden></option>
 
-                    </select>
-                    <label for="ram">Memória RAM</label>
-                    <input type="number" min="1" max="16" name="ram" id="ram" required>
-                    <label for="armazenamento">Armazenamento(em GB)</label>
-                    <input type="number" min="120" max="4000" name="armazenamento" id="armazenamento" required>
-                    <label for="placa-video">Placa de vídeo</label>
-                    <select name="placaVideo" id="placaVideo">
-                        <option value="" selected disabled hidden></option>
+                </select>
+                <label for="ram">Memória RAM</label>
+                <input type="number" min="1" max="16" name="ram" id="ram" required>
+                <label for="armazenamento">Armazenamento(em GB)</label>
+                <input type="number" min="120" max="4000" name="armazenamento" id="armazenamento" required>
+                <label for="placa-video">Placa de vídeo</label>
+                <select name="placaVideo" id="placaVideo">
+                    <option value="" selected disabled hidden></option>
 
-                    </select>
-                    <a href="./pages/suporte.html">Não encontrei o componente que queria</a>
-                    <input type="submit" class="p-button">
-                </form>
-            </section>
+                </select>
+                <a href="./pages/suporte.html">Não encontrei o componente que queria</a>
+                <input type="submit" class="p-button">
+            </form>
+        </section>
     </main>
 </body>
 </html>
