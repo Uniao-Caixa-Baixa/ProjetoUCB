@@ -21,27 +21,15 @@ checkForm.addEventListener('submit', function(e){
     let checkPlacaVideo = document.getElementById('checkPlacaVideo')
 
 
-    if (checkProc.checked){
-        divProc.style.display = 'flex'
-        if(checkProc.checked && checkPlacaMae.checked){
-            divProc.style.display = 'flex'
-            divPlacaM.style.display = 'flex'
-            if(checkProc.checked && checkPlacaMae.checked && checkPlacaVideo.checked){
-                divProc.style.display = 'flex'
-                divPlacaM.style.display = 'flex'
-                divPlacaVideo.style.display = 'flex'
-            }
-        }
-    }else if(checkPlacaMae.checked){
+    if(checkPlacaMae.checked){
         divPlacaM.style.display = 'flex'
-        if(checkPlacaMae.checked && checkPlacaVideo.checked){
-            divPlacaM.style.display = 'flex'
-            divPlacaVideo.style.display = 'flex'
-        }
-    }else if(checkPlacaVideo.checked){
-        divPlacaVideo.style.display = 'flex'
-    }if(checkProc.checked && checkPlacaVideo.checked){
+    }
+
+    if(checkProc.checked){
         divProc.style.display = 'flex'
+    }
+
+    if(checkPlacaVideo.checked){
         divPlacaVideo.style.display = 'flex'
     }
     
