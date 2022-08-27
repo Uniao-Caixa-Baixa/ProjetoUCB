@@ -22,11 +22,9 @@ checkUpdate.addEventListener('submit', function(e){
 
     if(checkNome.checked){
         divNome.style.display = 'flex'
-        if(checkNome.checked && checkSenha.checked){
-            divNome.style.display = 'flex'
-            divSenha.style.display = 'flex'
-        }
-    }else if (checkSenha){
+    }
+
+    if(checkSenha.checked){
         divSenha.style.display = 'flex'
     }
 })
