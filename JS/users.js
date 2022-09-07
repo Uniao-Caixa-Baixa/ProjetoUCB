@@ -8,6 +8,17 @@ class UserManager{
         return JSON.parse(sessionStorage.currentUser);
     }
 
+    static get currentUserIndex(){
+        let userIndex = null
+        if(this.isLogged){
+            this.arrayUser.forEach((el, index) => {
+            if (el.email == this.currentUser.email){
+                userIndex = index
+            }
+        });}
+        return userIndex
+    }
+
     static get isLogged(){
         if(sessionStorage.currentUser == '{}'){
             return false
@@ -42,6 +53,26 @@ class UserManager{
 
     static deslogar(){
         sessionStorage.currentUser = '{}'
+    }
+
+    static findUser(nome){
+        let user = null
+        this.arrayUser.forEach(el => {
+            if (el['nome'] == nome || el['email'] == nome){
+                user = el
+            }
+        });
+        return user
+    }
+
+    static findUserIndex(email){
+        let userIndex = null
+        this.arrayUser.forEach((el, index) => {
+            if (el['email'] == email){
+                userIndex = index
+            }
+        });
+        return userIndex
     }
 
 }

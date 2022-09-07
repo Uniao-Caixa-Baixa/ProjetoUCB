@@ -37,7 +37,7 @@ formDados.addEventListener('submit', function(e){
 
     let novoNome = formDados.elements.novoNome.value 
     let novaSenha = formDados.elements.novaSenha.value
-    let currentUserIndex = findUserIndex(currentUser)
+    let currentUserIndex = UserManager.currentUserIndex
 
     if (novoNome != ""){
         arrayUser[currentUserIndex]['nome'] = novoNome
@@ -55,13 +55,3 @@ formDados.addEventListener('submit', function(e){
     formDados.elements.novaSenha.value = ''
     window.alert('Dados alterados com sucesso!')
 })
-
-function findUserIndex(user){
-    let userIndex = null
-    arrayUser.forEach((el, index) => {
-        if (el['nome'] == user['nome']){
-            userIndex = index
-        }
-    });
-    return userIndex
-}

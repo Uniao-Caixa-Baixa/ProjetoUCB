@@ -19,7 +19,7 @@ formulario.addEventListener('submit', function(e){
     let nome = formulario.elements.nome.value;
     let senha = formulario.elements.senha.value;
 
-    let user = findUser(nome)
+    let user = UserManager.findUser(nome)
     if (user) {
         if (user['senha'] == senha){
             mensagem = `${user['nome']}, seja bem-vindo!`;
@@ -38,13 +38,3 @@ formulario.addEventListener('submit', function(e){
     window.alert(mensagem)
 
 })
-
-function findUser(nome){
-    let user = null
-    converteArrayUser.forEach(el => {
-        if (el['nome'] == nome || el['email'] == nome){
-            user = el
-        }
-    });
-    return user
-}
