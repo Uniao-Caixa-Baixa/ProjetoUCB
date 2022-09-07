@@ -1,7 +1,10 @@
+import { UserManager } from "./users.js"
+
+let arrayUser = UserManager.arrayUser
+var currentUser = UserManager.currentUser
+
 let checkUpdate = document.getElementById('update')
 let formDados = document.getElementById('formDados')
-let arrayUser = JSON.parse(sessionStorage.arrayUser)
-var currentUser = JSON.parse(sessionStorage.currentUser)
 
 let alteraNome = 0
 let alteraSenha = 0
@@ -34,7 +37,7 @@ formDados.addEventListener('submit', function(e){
 
     let novoNome = formDados.elements.novoNome.value 
     let novaSenha = formDados.elements.novaSenha.value
-    let currentUserIndex = findUserIndex(currentUser)
+    let currentUserIndex = UserManager.currentUserIndex
 
     if (novoNome != ""){
         arrayUser[currentUserIndex]['nome'] = novoNome
@@ -52,13 +55,3 @@ formDados.addEventListener('submit', function(e){
     formDados.elements.novaSenha.value = ''
     window.alert('Dados alterados com sucesso!')
 })
-
-function findUserIndex(user){
-    let userIndex = null
-    arrayUser.forEach((el, index) => {
-        if (el['nome'] == user['nome']){
-            userIndex = index
-        }
-    });
-    return userIndex
-}

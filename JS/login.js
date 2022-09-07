@@ -1,9 +1,9 @@
+import { UserManager } from "./users.js";
+
 let formulario = document.querySelector('form');
-let currentUser = JSON.parse(sessionStorage.currentUser)
-const converteArrayUser = JSON.parse(sessionStorage.arrayUser); 
 
 
-if (JSON.stringify(currentUser) != '{}') {
+if (UserManager.isLogged) {
     window.location.href = '../pages/dashboard.html'
 }
 
@@ -13,11 +13,12 @@ formulario.addEventListener('submit', function(e){
     let nome = formulario.elements.nome.value;
     let senha = formulario.elements.senha.value;
 
-    let user = findUser(nome)
+    let user = UserManager.findUser(nome)
     if (user) {
         if (user['senha'] == senha){
             mensagem = `${user['nome']}, seja bem-vindo!`;
-            logar(user)
+            UserManager.logar(user)
+            window.location.href = '../pages/dashboard.html'
         }else{
             mensagem = 'Senha incorreta! Tente novamente'
             formulario.elements.senha.value = ''
@@ -27,24 +28,7 @@ formulario.addEventListener('submit', function(e){
         formulario.elements.nome.value = ''
         formulario.elements.senha.value = ''
     }
-    sessionStorage.currentUser = JSON.stringify(currentUser)
 
     window.alert(mensagem)
 
 })
-
-function findUser(nome){
-    let user = null
-    converteArrayUser.forEach(el => {
-        if (el['nome'] == nome || el['email'] == nome){
-            user = el
-        }
-    });
-    return user
-}
-
-function logar(user){
-    currentUser = user
-    sessionStorage.currentUser = JSON.stringify(currentUser)
-    window.location.href = '../pages/dashboard.html'
-}

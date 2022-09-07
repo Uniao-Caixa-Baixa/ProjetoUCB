@@ -1,10 +1,12 @@
-var currentUser = JSON.parse(sessionStorage.currentUser)
+import { UserManager } from "./users.js"
+
+var currentUser = UserManager.currentUser
 const sairBtn = document.querySelector('#sairBtn')
 const dashboard = document.querySelector('#dashboard')
 const admDivs = document.querySelectorAll(".adm")
 const redirect = document.querySelector('#redirect-login')
 
-if (JSON.stringify(currentUser) == '{}') {
+if (!UserManager.isLogged) {
     redirect.style.display = 'flex'
 }else{
     dashboard.style.display = 'flex'
@@ -14,7 +16,6 @@ if (JSON.stringify(currentUser) == '{}') {
 }
 
 sairBtn.addEventListener('click', () => {
-    currentUser = {}
-    sessionStorage.currentUser = JSON.stringify(currentUser)
+    UserManager.deslogar()
     window.location.href = '../index.html'
 })
