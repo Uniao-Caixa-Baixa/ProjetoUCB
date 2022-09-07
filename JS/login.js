@@ -1,10 +1,7 @@
 let formulario = document.querySelector('form');
 let currentUser = JSON.parse(sessionStorage.currentUser)
 const converteArrayUser = JSON.parse(sessionStorage.arrayUser); 
-const linkInserc = document.getElementById('inserc')
-const linkAlteraDados = document.getElementById('alteraDados')
-const linkInsercGames = document.getElementById('isercGames')
-const linkAlteraCargos = document.getElementById('alteraCargo')
+
 
 if (JSON.stringify(currentUser) != '{}') {
     window.location.href = '../pages/dashboard.html'
