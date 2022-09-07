@@ -6,7 +6,7 @@ const dashboard = document.querySelector('#dashboard')
 const admDivs = document.querySelectorAll(".adm")
 const redirect = document.querySelector('#redirect-login')
 
-if (JSON.stringify(currentUser) == '{}') {
+if (!UserManager.isLogged) {
     redirect.style.display = 'flex'
 }else{
     dashboard.style.display = 'flex'

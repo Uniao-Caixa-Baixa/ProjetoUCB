@@ -5,7 +5,7 @@ const arrayUser = UserManager.arrayUser
 
 const form = document.querySelector('#registro')
 
-if (JSON.stringify(currentUser) != '{}') {
+if (UserManager.isLogged) {
     window.location.href = '../pages/dashboard.html'
 }
 

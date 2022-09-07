@@ -8,6 +8,14 @@ class UserManager{
         return JSON.parse(sessionStorage.currentUser);
     }
 
+    static get isLogged(){
+        if(sessionStorage.currentUser == '{}'){
+            return false
+        }else{
+            return true
+        }
+    }
+
 }
 
 export {UserManager}

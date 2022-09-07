@@ -9,7 +9,7 @@ const linkAlteraDados = document.getElementById('alteraDados')
 const linkInsercGames = document.getElementById('isercGames')
 const linkAlteraCargos = document.getElementById('alteraCargo')
 
-if (JSON.stringify(currentUser) != '{}') {
+if (UserManager.isLogged) {
     window.location.href = '../pages/dashboard.html'
 }
 
