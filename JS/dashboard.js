@@ -16,7 +16,6 @@ if (!UserManager.isLogged) {
 }
 
 sairBtn.addEventListener('click', () => {
-    currentUser = {}
-    sessionStorage.currentUser = JSON.stringify(currentUser)
+    UserManager.deslogar()
     window.location.href = '../index.html'
 })

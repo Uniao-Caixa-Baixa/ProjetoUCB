@@ -23,7 +23,8 @@ formulario.addEventListener('submit', function(e){
     if (user) {
         if (user['senha'] == senha){
             mensagem = `${user['nome']}, seja bem-vindo!`;
-            logar(user)
+            UserManager.logar(user)
+            window.location.href = '../pages/dashboard.html'
         }else{
             mensagem = 'Senha incorreta! Tente novamente'
             formulario.elements.senha.value = ''
@@ -33,7 +34,6 @@ formulario.addEventListener('submit', function(e){
         formulario.elements.nome.value = ''
         formulario.elements.senha.value = ''
     }
-    sessionStorage.currentUser = JSON.stringify(currentUser)
 
     window.alert(mensagem)
 
@@ -47,10 +47,4 @@ function findUser(nome){
         }
     });
     return user
-}
-
-function logar(user){
-    currentUser = user
-    sessionStorage.currentUser = JSON.stringify(currentUser)
-    window.location.href = '../pages/dashboard.html'
 }

@@ -36,6 +36,14 @@ class UserManager{
         return valido
     }
 
+    static logar(user){
+        sessionStorage.currentUser = JSON.stringify(user)
+    }
+
+    static deslogar(){
+        sessionStorage.currentUser = '{}'
+    }
+
 }
 
 export {UserManager}
