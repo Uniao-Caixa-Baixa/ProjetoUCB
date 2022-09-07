@@ -1,5 +1,7 @@
+import { UserManager } from "./users.js";
+
 const form = document.querySelector('form');
-let arrayUser = JSON.parse(sessionStorage.arrayUser);
+let arrayUser = UserManager.arrayUser
 let alteraCargo = 0;
 
 form.addEventListener('submit', function(e){

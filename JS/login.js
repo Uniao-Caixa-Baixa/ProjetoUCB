@@ -1,6 +1,9 @@
+import { UserManager } from "./users.js";
+
+let currentUser = UserManager.currentUser
+const converteArrayUser = UserManager.arrayUser
+
 let formulario = document.querySelector('form');
-let currentUser = JSON.parse(sessionStorage.currentUser)
-const converteArrayUser = JSON.parse(sessionStorage.arrayUser); 
 const linkInserc = document.getElementById('inserc')
 const linkAlteraDados = document.getElementById('alteraDados')
 const linkInsercGames = document.getElementById('isercGames')

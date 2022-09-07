@@ -1,4 +1,6 @@
-var currentUser = JSON.parse(sessionStorage.currentUser)
+import { UserManager } from "./users.js"
+
+var currentUser = UserManager.currentUser
 const sairBtn = document.querySelector('#sairBtn')
 const dashboard = document.querySelector('#dashboard')
 const admDivs = document.querySelectorAll(".adm")

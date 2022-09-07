@@ -1,8 +1,9 @@
+import { UserManager } from "./users.js";
 
 const form = document.querySelector('#alterarSenha');
 
-let arrayUser = JSON.parse(sessionStorage.arrayUser);
-let currentUser = JSON.parse(sessionStorage.currentUser);
+let arrayUser = UserManager.arrayUser
+let currentUser = UserManager.currentUser
 
 let alteraSenha = 0;
 

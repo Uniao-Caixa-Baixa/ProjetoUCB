@@ -1,12 +1,14 @@
+import {UserManager} from "./users.js";
+
+const currentUser = UserManager.currentUser
+const arrayUser = UserManager.arrayUser
 
 const form = document.querySelector('#registro')
-const currentUser = JSON.parse(sessionStorage.currentUser)
 
 if (JSON.stringify(currentUser) != '{}') {
     window.location.href = '../pages/dashboard.html'
 }
 
-let arrayUser = JSON.parse(sessionStorage.arrayUser);
 const tipoUsuario = 'COMUM';
 
 form.addEventListener('submit', function(e){
