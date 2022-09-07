@@ -16,6 +16,26 @@ class UserManager{
         }
     }
 
+    static nomeExiste(nome){
+        let valido = false
+        this.arrayUser.forEach(user => {
+            if (user['nome'] == nome){
+                valido = true
+            }
+        });
+        return valido
+    }
+    
+    static emailExiste(email){
+        let valido = false
+        this.arrayUser.forEach(user => {
+            if (user['email'] == email){
+                valido = true
+            }
+        });
+        return valido
+    }
+
 }
 
 export {UserManager}

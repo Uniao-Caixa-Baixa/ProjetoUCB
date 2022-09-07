@@ -18,10 +18,10 @@ form.addEventListener('submit', function(e){
     let senha = form.elements.senha.value;
     let senha2 = form.elements.senha2.value;
 
-    if (!verificaNome(nome)){
+    if (UserManager.nomeExiste(nome)){
         form.elements.user.value = '';
         window.alert('Nome de usuário já está em uso! Tente outro nome')
-    }else if (!verificaEmail(email)){
+    }else if (UserManager.emailExiste(email)){
         form.elements.email.value = '';
         window.alert('Email já está em uso! Utilize outro')
     }else if (!verificaSenha(senha, senha2)){
@@ -54,24 +54,4 @@ function verificaSenha(senha1, senha2){
     }else{
         return false
     }
-}
-
-function verificaNome(nome){
-    let valido = true
-    arrayUser.forEach(user => {
-        if (user['nome'] == nome){
-            valido = false
-        }
-    });
-    return valido
-}
-
-function verificaEmail(email){
-    let valido = true
-    arrayUser.forEach(user => {
-        if (user['email'] == email){
-            valido = false
-        }
-    });
-    return valido
 }

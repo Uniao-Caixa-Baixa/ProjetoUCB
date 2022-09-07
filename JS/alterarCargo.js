@@ -9,7 +9,7 @@ form.addEventListener('submit', function(e){
 
     const email = form.elements.email.value
 
-    if (verificaEmail(email)){
+    if (!UserManager.emailExiste(email)){
         form.elements.email.value = '';
         window.alert('O usuário não foi encotrado!')
     }else{
@@ -27,14 +27,3 @@ form.addEventListener('submit', function(e){
 
 
 });
-
-
-function verificaEmail(email){
-    let valido = true
-    arrayUser.forEach(user => {
-        if (user['email'] == email){
-            valido = false
-        }
-    });
-    return valido
-}

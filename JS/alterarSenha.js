@@ -13,7 +13,7 @@ form.addEventListener('submit', function(e){
     let senha = form.elements.senha.value;
     let senha2 = form.elements.senha2.value;
 
-    if (!verificaEmail(email)){
+    if (!UserManager.emailExiste(email)){
         form.elements.email.value = '';
         window.alert('Não encontramos nenhuma conta com esse email, primeiramente faça seu registro!')
     }else if (!verificaSenha(senha, senha2)){
@@ -39,16 +39,6 @@ function verificaSenha(senha1, senha2){
     }else{
         return false
     }
-}
-
-function verificaEmail(email){
-    let valido = false
-    arrayUser.forEach(user => {
-        if (user['email'] == email){
-            valido = true
-        }
-    });
-    return valido
 }
 
 function findUserIndex(email){
