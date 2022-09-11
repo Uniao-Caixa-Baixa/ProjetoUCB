@@ -13,14 +13,30 @@
 <body>
     <object data="partials/header.html" class="header"></object>
     <main>
-            <section id="dashboard">
-                <a class="p-button" href="../pages/updates/update.html">Alterar dados da conta</a>
-                <button class="p-button" id="sairBtn">Sair</button>
-                <a id="inserc" href="../pages/updates/insercaoComp.html">Deseja ver algum componente no nosso site? Clique aqui para inseri-lo!!!</a>
-                <section class="adm">
-                    <a class="s-button" id="isercGames" href="insercaoJogos.html">Inserir jogo</a>
-                    <a class="s-button" id="alteraCargo" href="alterarCargo.html">Alterar cargo</a>
-                </section>
+        <h1>Bem-vindo</h1>
+        <section id="dashboard">
+                <div class="tabs-btn-box">
+                    <button class="tab-btn">Início</button>
+                    <button class="adm tab-btn">ADM</button>
+                    <button class="tab-btn">Conta</button>
+                </div>
+                <div id="home" class="tab-content">
+                    <h3>Sugerir</h3>
+                    <p>Faça uma sugestão para nós e tentaremos atendê-la</p>
+                    <a id="inserc" href="../pages/updates/insercaoComp.html">Sugerir componente</a>
+                </div>
+                <div class="adm tab-content" id="adm">
+                    <h3>ADM</h3>
+                    <p>Gerencie cargos e insira games</p>
+                    <a id="isercGames" href="insercaoJogos.html">Inserir jogo</a>
+                    <a id="alteraCargo" href="alterarCargo.html">Alterar cargo</a>
+                </div>
+                <div id="conta" class="tab-content">
+                    <h3>Conta</h3>
+                    <p>Altere seus dados como desejar ou faça logoff</p>
+                    <a href="../pages/updates/update.html">Alterar dados da conta</a>
+                    <button id="sairBtn">Sair</button>
+                </div>
             </section>
             <section id="redirect-login">
                 <h3>Você precisa fazer login antes de acessar essa página!</h3>

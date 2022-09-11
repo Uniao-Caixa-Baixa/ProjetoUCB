@@ -61,6 +61,7 @@ body{
 main{
     display: flex;
     flex-direction: column;
+    margin-bottom: 10vh;
 }
 
 #mainComp{
@@ -348,10 +349,77 @@ a{
     display: none;
     flex-direction: column;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 #redirect-login, #dashboard{
     display: none;
+}
+
+#dashboard{
+    flex-direction: row;
+    max-height: fit-content;
+    width: 80vw;
+    margin: auto;
+}
+
+#dashboard > .tab-content a,
+#dashboard > .tab-content button{
+    width: 25%;
+    padding: 10px 20px;
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    background-color: var(--bg-color);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .2s;
+    text-align: center;
+}
+
+#dashboard > .tab-content a:hover,
+#dashboard > .tab-content button:hover{
+    color: white;
+    background-color: var(--cor-primaria);
+}
+
+.tabs-btn-box{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.tab-btn{
+    background-color: white;
+}
+
+.tab-btn:hover{
+    background-color: var(--bg-color-secundaria);
+}
+
+.tab-btn{
+    padding: 20px;
+    border: none;
+    font-size: 1rem;
+    font-family: var(--fonte-texto);
+    font-weight: bold;
+    cursor: pointer;
+    background-color: white;
+}
+
+.tab-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    background-color: white;
+    padding: 20px;
+    max-height: fit-content;
+    width: 100%;
+    border-radius: 5px;
 }
 
 #landing-header{
