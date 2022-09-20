@@ -1,0 +1,19 @@
+{
+  "name": "meu_pc_roda",
+  "version": "1.0.0",
+  "description": "[![GitHub license](https://img.shields.io/github/license/Uniao-Caixa-Baixa/ProjetoUCB)](https://github.com/Uniao-Caixa-Baixa/ProjetoUCB/blob/master/LICENSE)\r ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=status&message=Em%20desenvolvimento&color=GREEN&style=flat)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoVieira003/ProjetoUCB.git"
+  },
+  "author": "UCB",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrunoVieira003/ProjetoUCB/issues"
+  },
+  "homepage": "https://github.com/BrunoVieira003/ProjetoUCB#readme"
+}
