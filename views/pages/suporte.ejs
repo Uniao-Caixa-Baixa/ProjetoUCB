@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Meu PC roda?</title>
 </head>
 <body>
-    <object data="partials/header.html" class="header"></object>
+    <%- include('../partials/header.ejs') %>
     <main>
         <section>
             <h2>Suporte</h2>
             <p>Antes de contribuir para nosso site, precisamos que você faça login!</p>
             <div class="button-box">
-                <a class="p-button" href="./login.html">Já tenho uma conta</a>
-                <a class="p-button" href="./registro.html">Ainda não tenho uma conta</a>
+                <a class="p-button" href="/login">Já tenho uma conta</a>
+                <a class="p-button" href="/registro">Ainda não tenho uma conta</a>
             </div>
         </section>
-        <a href="../index.html">Voltar ao início</a>
+        <a href="/">Voltar ao início</a>
     </main>
 </body>
 </html>

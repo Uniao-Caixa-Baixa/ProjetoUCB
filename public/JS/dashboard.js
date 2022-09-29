@@ -16,5 +16,5 @@ if (JSON.stringify(currentUser) == '{}') {
 sairBtn.addEventListener('click', () => {
     currentUser = {}
     sessionStorage.currentUser = JSON.stringify(currentUser)
-    window.location.href = '../index.html'
+    window.location.href = '/'
 })

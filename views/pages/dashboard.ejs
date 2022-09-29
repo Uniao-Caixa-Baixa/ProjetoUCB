@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Meu PC roda?</title>
+    <script src="/JS/dashboard.js" defer></script>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+            <section id="dashboard">
+                <a class="p-button" href="/update">Alterar dados da conta</a>
+                <button class="p-button" id="sairBtn">Sair</button>
+                <a id="inserc" href="/insercaoComp">Deseja ver algum componente no nosso site? Clique aqui para inseri-lo!!!</a>
+                <section class="adm">
+                    <a class="s-button" id="isercGames" href="/insercaoJogos">Inserir jogo</a>
+                    <a class="s-button" id="alteraCargo" href="/alterarCargo">Alterar cargo</a>
+                </section>
+            </section>
+            <section id="redirect-login">
+                <h3>Você precisa fazer login antes de acessar essa página!</h3>
+                <div class="button-box">
+                    <a class="p-button" href="/login">Já tenho uma conta</a>
+                    <a class="p-button" href="/registro">Ainda não tenho uma conta</a>
+                </div>
+            </section>
+    </main>
+</body>
+</html>

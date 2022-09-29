@@ -7,7 +7,7 @@ const linkInsercGames = document.getElementById('isercGames')
 const linkAlteraCargos = document.getElementById('alteraCargo')
 
 if (JSON.stringify(currentUser) != '{}') {
-    window.location.href = '../pages/dashboard.html'
+    window.location.href = '/dashboard'
 }
 
 formulario.addEventListener('submit', function(e){
@@ -49,5 +49,5 @@ function findUser(nome){
 function logar(user){
     currentUser = user
     sessionStorage.currentUser = JSON.stringify(currentUser)
-    window.location.href = '../pages/dashboard.html'
+    window.location.href = '/dashboard'
 }
