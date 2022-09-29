@@ -37,5 +37,5 @@ tab_btns.forEach((btn, index)=>{
 
 sairBtn.addEventListener('click', () => {
     UserManager.deslogar()
-    window.location.href = '../index.html'
+    window.location.href = '/'
 })

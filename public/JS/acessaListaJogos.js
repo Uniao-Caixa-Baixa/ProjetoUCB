@@ -21,7 +21,6 @@ formulario.addEventListener('submit', function(e){
     })
 
     sessionStorage.configPC = JSON.stringify(configPC)
-
-    window.location = 'pages/jogos.html'
+    window.location = '/jogos';
 });
 

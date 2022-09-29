@@ -4,7 +4,7 @@ let formulario = document.querySelector('form');
 
 
 if (UserManager.isLogged) {
-    window.location.href = '../pages/dashboard.html'
+    window.location.href = '/dashboard'
 }
 
 formulario.addEventListener('submit', function(e){
@@ -32,3 +32,19 @@ formulario.addEventListener('submit', function(e){
     window.alert(mensagem)
 
 })
+
+function findUser(nome){
+    let user = null
+    converteArrayUser.forEach(el => {
+        if (el['nome'] == nome || el['email'] == nome){
+            user = el
+        }
+    });
+    return user
+}
+
+function logar(user){
+    currentUser = user
+    sessionStorage.currentUser = JSON.stringify(currentUser)
+    window.location.href = '/dashboard'
+}

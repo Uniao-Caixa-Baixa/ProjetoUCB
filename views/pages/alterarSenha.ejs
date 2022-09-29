@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mudança de senha</title>
-    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../JS/alterarSenha.js" type="module" defer></script>
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="JS/alterarSenha.js" defer></script>
 </head>
 <body>
-    <object data="partials/header.html" class="header"></object>
+    <%- include('../partials/header.ejs') %>
     <main>
         <section>
             <form id="alterarSenha" action="" class="login-card">
@@ -25,7 +25,7 @@
                 <input class="p-button" type="submit">
             </form>
         </section>
-        <a class="p-button" href="../index.html">Voltar</a>
+        <a class="p-button" href="/">Voltar</a>
     </main>
 </body>
 </html>

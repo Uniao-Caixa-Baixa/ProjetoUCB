@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Meu PC roda?</title>
-    <script src="../JS/login.js" type="module" defer></script>
+    <script src="JS/login.js" defer></script>
 </head>
 <body>
-    <object data="partials/header.html" class="header"></object>
+    <%- include('../partials/header.ejs') %>
     <main>
             <section class="login">
                 <div class="login-presentation">
@@ -24,9 +24,9 @@
                     <input name="nome" type="text" required>
                     <label for="">Senha</label>
                     <input name="senha" type="password" required>
-                    <a href="alterarSenha.html">Esqueci minha senha</a>
+                    <a href="/alterarSenha">Esqueci minha senha</a>
                     <input class="p-button" type="submit">
-                    <a href="registro.html">Ainda não tem uma conta? Crie agora!</a>
+                    <a href="/registro">Ainda não tem uma conta? Crie agora!</a>
                 </form>
             </section>
     </main>

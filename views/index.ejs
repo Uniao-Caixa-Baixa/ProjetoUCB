@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./JS/home.js"></script>
-    <script src="./JS/carregaComponentes.js" defer></script>
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="JS/home.js"></script>
+    <script src="/JS/carregaComponentes.js" defer></script>
     <script src="JS/acessaListaJogos.js" defer></script>
     <title>Meu PC roda?</title>
 </head>
 <body>
-    <object data="pages/partials/landingHeader.html" class="header"></object>
+    <%- include('partials/header.ejs') %>
     <main>
         <section id="landing-page">
             <div id="landing-text">
@@ -39,7 +39,7 @@
                     <option value="" selected disabled hidden></option>
 
                 </select>
-                <a href="./pages/suporte.html">Não encontrei o componente que queria</a>
+                <a href="/suporte">Não encontrei o componente que queria</a>
                 <input type="submit" class="p-button">
             </form>
         </section>
