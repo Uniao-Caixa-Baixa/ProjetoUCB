@@ -18,7 +18,7 @@ formulario.addEventListener('submit', function(e){
         if (user['senha'] == senha){
             mensagem = `${user['nome']}, seja bem-vindo!`;
             UserManager.logar(user)
-            window.location.href = '../pages/dashboard.html'
+            window.location.href = '/dashboard'
         }else{
             mensagem = 'Senha incorreta! Tente novamente'
             formulario.elements.senha.value = ''
