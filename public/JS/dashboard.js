@@ -1,6 +1,3 @@
-import { UserManager } from "./users.js"
-
-var currentUser = UserManager.currentUser
 const sairBtn = document.querySelector('#sairBtn')
 const dashboard = document.querySelector('#dashboard')
 const adms = document.querySelectorAll(".adm")
@@ -17,25 +14,10 @@ const showTab = (tab_index)=>{
     tabs[tab_index].style.display = 'flex'
 }
 
-
-if (!UserManager.isLogged) {
-    redirect.style.display = 'flex'
-}else{
-    dashboard.style.display = 'flex'
-    if(currentUser['usuario'] == 'ADMINISTRADOR'){
-        adms.forEach(el => el.style.display = 'flex')
-    }
-    showTab(0)
-
-}
-
 tab_btns.forEach((btn, index)=>{
     btn.addEventListener('click', ()=>{
         showTab(index)
     })
 })
 
-sairBtn.addEventListener('click', () => {
-    UserManager.deslogar()
-    window.location.href = '/'
-})
+showTab(0)

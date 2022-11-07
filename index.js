@@ -1,3 +1,11 @@
+(async ()=>{
+    const database = require('./db')
+    const User = require('./models/User')
+    await database.sync()
+})()
+const User = require('./models/User')
+const { Op } = require("sequelize");
+
 const express = require('express');
 const { resolve } = require('path');
 
@@ -6,6 +14,7 @@ const app = express()
 
 app.set('views', resolve('./views'))
 app.set('view engine', 'ejs')
+app.use(express.urlencoded({'extended':true}))
 
 app.use(express.static('public'))
 
@@ -17,12 +26,44 @@ app.get('/login', (req, res)=>{
     res.render('pages/login')
 })
 
+app.post('/login', async (req, res)=>{
+    const {nome, senha} = req.body
+
+    const user = await User.findOne({where:{
+        [Op.or]: [{nome: nome}, {email: nome}]
+    }})
+    if(user && user.senha == senha){
+        res.redirect('/dashboard')
+    }else{
+        res.redirect('/login')
+    }
+    
+})
+
 app.get('/registro', (req, res)=>{
     res.render('pages/registro')
 })
 
+app.post('/registro', async (req, res)=>{
+    const {nome, email, senha, senhaConfirm} = req.body
+
+    const user = await User.findOne({where:{
+        [Op.or]: [{nome: nome},{email: email}]
+    }})
+    if(user === null && senha == senhaConfirm){
+        const new_user = await User.create({
+            nome: nome,
+            email: email,
+            senha: senha
+        })
+        res.redirect('/login')
+    }else{
+        res.redirect('/registro')
+    }
+})
+
 app.get('/dashboard', (req, res)=>{
-    res.render('pages/dashboard')
+    res.render('pages/dashboard')    
 })
 
 app.get('/alterarSenha', (req, res)=>{

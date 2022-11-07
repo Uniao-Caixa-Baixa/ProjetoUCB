@@ -2,11 +2,6 @@ import { UserManager } from "./users.js";
 
 let formulario = document.querySelector('form');
 
-
-if (UserManager.isLogged) {
-    window.location.href = '/dashboard'
-}
-
 formulario.addEventListener('submit', function(e){
     e.preventDefault();
     let mensagem

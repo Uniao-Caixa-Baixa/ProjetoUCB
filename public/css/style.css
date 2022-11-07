@@ -27,6 +27,7 @@ header{
     justify-content: space-evenly;
     width: 100%;
     height: 15vh;
+    margin-bottom: 5vh;
     background-color: var(--cor-primaria);
 }
 
@@ -341,13 +342,13 @@ a{
 }
 
 .adm{
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: wrap;
 }
 
-#redirect-login, #dashboard{
+#redirect-login{
     display: none;
 }
 

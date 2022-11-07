@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
 
     <title>Meu PC roda?</title>
-    <script src="JS/login.js" type="module" defer></script>
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
@@ -18,7 +17,7 @@
                     <h3>Faça login e contribua com a gente!</h3>
                     <img src="images/login_img.png" alt="">
                 </div>
-                <form action="" class="login-card">
+                <form action="/login" method="post" class="login-card">
                     <p>Preencha os campos abaixo</p>
                     <label for="">Nome</label>
                     <input name="nome" type="text" required>
