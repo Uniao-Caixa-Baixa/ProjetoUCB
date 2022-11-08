@@ -5,40 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alteração de dados</title>
-    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="JS/update.js" defer></script>
 </head>
 <body>
     <%- include('../../partials/header.ejs') %>
     <main>
+        
         <section>
             <h1>Alteração de dados</h1>
-            <p><strong>Antes de alterar seus dados, faça login no formulário abaixo</strong></p>
-            <br>
-            <form action="" id="update">
-                <h3>Quais dos seus dados você deseja alterar?</h3>
-                        <label for="checkNome">Nome</label>
-                        <input type="checkbox" id="checkNome">
-
-                        <label for="checkSenha">Senha</label>
-                        <input type="checkbox" id="checkSenha">
-
-                        <input type="submit" class="inserc"></input>
-                </form>
-        </section>
-
-        <section>
-            <form action="" class="login-card" id="formDados">
+            <form action="/user/update?_method=PUT" method="post" class="login-card">
                 <h3>Novos dados:</h3>
                 <div id="divNome">
-                    <label for="">Altere seu nome:</label>
-                    <input type="text" name="novoNome">
+                    <label for="novoNome">Nome:</label>
+                    <input type="text" name="novoNome" value="<%= currentUser.nome %>">
                 </div>
 
                 <div id="divSenha">
-                    <label for="">Digite sua nova senha:</label>
-                    <input type="password" name="novaSenha">
+                    <label for="novaSenha">Digite sua nova senha:</label>
+                    <input type="password" name="novaSenha" value="<%= currentUser.senha %>">
                 </div>
                 <input type="submit" class="p-button" value="Alterar">
             </form>

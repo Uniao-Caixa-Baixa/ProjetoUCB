@@ -323,7 +323,7 @@ label{
 
 
 #divNome, #divSenha{
-    display: none;
+    display: flex;
     flex-direction: column;
 }
 

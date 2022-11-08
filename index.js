@@ -7,6 +7,7 @@ const User = require('./models/User')
 const { Op } = require("sequelize");
 
 const express = require('express');
+const methodOverride = require('method-override')
 const { resolve } = require('path');
 
 const port = 3000
@@ -15,6 +16,7 @@ const app = express()
 app.set('views', resolve('./views'))
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({'extended':true}))
+app.use(methodOverride('_method'))
 
 app.use(express.static('public'))
 
@@ -106,8 +108,21 @@ app.get('/insercaoComp', (req, res)=>{
     res.render('pages/updates/insercaoComp')
 })
 
-app.get('/update', (req, res)=>{
-    res.render('pages/updates/update')
+app.get('/user/update', (req, res)=>{
+    if (!currentUser){
+        res.redirect('/login')
+    }else{   
+        res.render('pages/updates/update', { currentUser })
+    }
+})
+app.put('/user/update', async (req, res)=>{
+    if (currentUser){
+        const { novoNome, novaSenha } = req.body
+        currentUser.nome = novoNome
+        currentUser.senha = novaSenha
+        await currentUser.save()
+        res.redirect('/dashboard')
+    }
 })
 
 app.get('/sobre', (req, res)=>{
