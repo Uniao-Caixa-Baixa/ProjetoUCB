@@ -18,12 +18,18 @@ app.use(express.urlencoded({'extended':true}))
 
 app.use(express.static('public'))
 
+var currentUser
+
 app.get('/', (req, res)=>{
     res.render('index')
 })
 
 app.get('/login', (req, res)=>{
-    res.render('pages/login')
+    if (currentUser){
+        res.redirect('/dashboard')
+    }else{
+        res.render('pages/login')
+    }
 })
 
 app.post('/login', async (req, res)=>{
@@ -33,6 +39,7 @@ app.post('/login', async (req, res)=>{
         [Op.or]: [{nome: nome}, {email: nome}]
     }})
     if(user && user.senha == senha){
+        currentUser = user
         res.redirect('/dashboard')
     }else{
         res.redirect('/login')
@@ -41,7 +48,11 @@ app.post('/login', async (req, res)=>{
 })
 
 app.get('/registro', (req, res)=>{
-    res.render('pages/registro')
+    if (currentUser){
+        res.redirect('/dashboard')
+    }else{
+        res.render('pages/registro')
+    }
 })
 
 app.post('/registro', async (req, res)=>{
@@ -63,7 +74,16 @@ app.post('/registro', async (req, res)=>{
 })
 
 app.get('/dashboard', (req, res)=>{
-    res.render('pages/dashboard')    
+    if (!currentUser){
+        res.redirect('/login')
+    }else{
+        res.render('pages/dashboard', { currentUser })    
+    }
+})
+
+app.get('/sair', (req, res)=>{
+    currentUser = undefined    
+    res.redirect('/')
 })
 
 app.get('/alterarSenha', (req, res)=>{
