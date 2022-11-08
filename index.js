@@ -92,6 +92,20 @@ app.get('/alterarSenha', (req, res)=>{
     res.render('pages/alterarSenha')
 })
 
+app.put('/alterarSenha', async (req, res)=>{
+    const {email, senha, senhaConfirm} = req.body
+    const user = await User.findOne({where:{
+        email: email
+    }})
+    if (user && senha == senhaConfirm){
+        user.senha = senha
+        await user.save()
+        res.redirect('/login')
+    }else{
+        res.redirect('/alterarSenha')
+    }
+})
+
 app.get('/alterarCargo', (req, res)=>{
     res.render('pages/alterarCargo')
 })

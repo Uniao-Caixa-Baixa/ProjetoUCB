@@ -13,15 +13,15 @@
     <%- include('../partials/header.ejs') %>
     <main>
         <section>
-            <form id="alterarSenha" action="" class="login-card">
+            <form id="alterarSenha" action="/alterarSenha?_method=PUT" method="post" class="login-card">
                 <h3>Solicitação de mudança de senha</h3>
                 <p>Preencha os campos abaixo:</p>
-                <label for="">E-mail:</label>
+                <label for="email">E-mail:</label>
                 <input type="email" name="email" placeholder="Digite seu e-mail">
-                <label for="">Nova senha:</label>
+                <label for="senha">Nova senha:</label>
                 <input type="password" name="senha" placeholder="Digite sua senha">
-                <label for="">Nova senha (confirmação)</label>
-                <input type="password" name="senha2" placeholder="Confirme sua senha">
+                <label for="">Confirme sua nova senha:</label>
+                <input type="password" name="senhaConfirm" placeholder="Confirme sua senha">
                 <input class="p-button" type="submit">
             </form>
         </section>
