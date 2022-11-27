@@ -7,6 +7,7 @@ const User = require('./models/User')
 const { Op } = require("sequelize");
 
 const express = require('express');
+const session = require('express-session')
 const methodOverride = require('method-override')
 const { resolve } = require('path');
 
@@ -17,6 +18,7 @@ app.set('views', resolve('./views'))
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({'extended':true}))
 app.use(methodOverride('_method'))
+app.use(session({secret: "mysecretkey"}))
 
 app.use(express.static('public'))
 
@@ -27,7 +29,7 @@ app.get('/', (req, res)=>{
 })
 
 app.get('/login', (req, res)=>{
-    if (currentUser){
+    if (req.session.currentUser){
         res.redirect('/dashboard')
     }else{
         res.render('pages/login')
@@ -41,7 +43,7 @@ app.post('/login', async (req, res)=>{
         [Op.or]: [{nome: nome}, {email: nome}]
     }})
     if(user && user.senha == senha){
-        currentUser = user
+        req.session.currentUser = user
         res.redirect('/dashboard')
     }else{
         res.redirect('/login')
@@ -50,7 +52,7 @@ app.post('/login', async (req, res)=>{
 })
 
 app.get('/registro', (req, res)=>{
-    if (currentUser){
+    if (req.session.currentUser){
         res.redirect('/dashboard')
     }else{
         res.render('pages/registro')
@@ -76,15 +78,16 @@ app.post('/registro', async (req, res)=>{
 })
 
 app.get('/dashboard', (req, res)=>{
-    if (!currentUser){
+    if (!req.session.currentUser){
         res.redirect('/login')
     }else{
+        currentUser = req.session.currentUser
         res.render('pages/dashboard', { currentUser })    
     }
 })
 
 app.get('/sair', (req, res)=>{
-    currentUser = undefined    
+    req.session.currentUser = undefined    
     res.redirect('/')
 })
 
@@ -123,18 +126,21 @@ app.get('/insercaoComp', (req, res)=>{
 })
 
 app.get('/user/update', (req, res)=>{
-    if (!currentUser){
+    if (!req.session.currentUser){
         res.redirect('/login')
-    }else{   
+    }else{
+        currentUser = req.session.currentUser
         res.render('pages/updates/update', { currentUser })
     }
 })
 app.put('/user/update', async (req, res)=>{
-    if (currentUser){
+    if (req.session.currentUser){
         const { novoNome, novaSenha } = req.body
-        currentUser.nome = novoNome
-        currentUser.senha = novaSenha
-        await currentUser.save()
+        var user = await User.findByPk(req.session.currentUser.id)
+        user.nome = novoNome
+        user.senha = novaSenha
+        await user.save()
+        req.session.currentUser = user
         res.redirect('/dashboard')
     }
 })
