@@ -32,7 +32,10 @@
             </select>
         </div>
         
-        <ul id="listaJogos">
+        <ul>
+            <% for(let jogo of jogos ) { %>
+                <li><%= jogo.nome %> - <%= jogo.preco %> </li>
+            <% } %>
         </ul>
     </section>
     

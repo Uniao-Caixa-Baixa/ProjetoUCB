@@ -1,9 +1,12 @@
 (async ()=>{
     const database = require('./db')
     const User = require('./models/User')
+    const Game = require('./models/Game')
     await database.sync()
 })()
+
 const User = require('./models/User')
+const Game = require('./models/Game')
 const { Op } = require("sequelize");
 
 const express = require('express');
@@ -117,8 +120,9 @@ app.get('/insercaoJogos', (req, res)=>{
     res.render('pages/insercaoJogos')
 })
 
-app.get('/jogos', (req, res)=>{
-    res.render('pages/jogos')
+app.get('/jogos', async (req, res)=>{
+    const jogos = await Game.findAll()
+    res.render('pages/jogos', { jogos })
 })
 
 app.get('/insercaoComp', (req, res)=>{
