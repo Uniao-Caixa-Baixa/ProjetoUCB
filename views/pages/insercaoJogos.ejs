@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <script src="JS/insercaoJogos.js" defer></script>
     <title>Meu PC roda?</title>
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
         <section>
-            <form action="" class="login-card">
+            <form action="/insercaoJogos" method="post" class="login-card">
                 <h3>Inserir jogos</h3>
                 <p>Preencha os campos abaixo</p>
-                <label for="">Nome</label>
+                <label for="nome">Nome</label>
                 <input name="nome" type="text" required>
-                <label for="">Estilo:</label>
+                <label for="estilo">Estilo:</label>
                 <select name="estilo" required>
                     <option value="" selected disabled hidden></option>
                     <option value="Luta">Luta</option>
@@ -29,9 +28,9 @@
                     <option value="Esportes">Esportes</option>
                     <option value="Outros">Outros</option>
                 </select>
-                <label for="">R$</label>
+                <label for="preco">R$</label>
                 <input type="number" min="0.00" max="999999.99" step="0.01" name="preco" required>
-                <label for="">Tier</label>
+                <label for="tier">Tier</label>
                 <input type="number" min="1" max="7" name="tier" required>
                 <input class="p-button" type="submit">
             </form>

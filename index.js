@@ -120,6 +120,25 @@ app.get('/insercaoJogos', (req, res)=>{
     res.render('pages/insercaoJogos')
 })
 
+app.post('/insercaoJogos', async (req, res)=>{
+    const { nome, preco, tier } = req.body
+
+    const game = await Game.findOne({where:{
+        nome: nome
+    }})
+
+    if (!game){
+        const new_game = await Game.create({
+            nome: nome,
+            preco: preco,
+            tier: tier
+        })
+        res.redirect('/jogos')
+    }else{
+        res.redirect('/insercaoJogos')
+    }
+})
+
 app.get('/jogos', async (req, res)=>{
     const jogos = await Game.findAll()
     res.render('pages/jogos', { jogos })
