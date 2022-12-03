@@ -17,13 +17,23 @@ const { resolve } = require('path');
 const port = 3000
 const app = express()
 
+// Configuração ejs
 app.set('views', resolve('./views'))
 app.set('view engine', 'ejs')
+
 app.use(express.urlencoded({'extended':true}))
 app.use(methodOverride('_method'))
-app.use(session({secret: "mysecretkey"}))
 
 app.use(express.static('public'))
+
+app.use(session({secret: "mysecretkey"}))
+
+// Configuração para exibir pop-ups
+app.use((req, res, next)=>{
+    res.locals.message = req.session.message
+    delete req.session.message
+    next()
+})
 
 var currentUser
 
@@ -135,6 +145,7 @@ app.post('/insercaoJogos', async (req, res)=>{
         })
         res.redirect('/jogos')
     }else{
+        req.session.message = 'Esse jogo já existe! Por favor insira outro'
         res.redirect('/insercaoJogos')
     }
 })
