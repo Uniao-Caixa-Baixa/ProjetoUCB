@@ -55,11 +55,15 @@ app.post('/login', async (req, res)=>{
     const user = await User.findOne({where:{
         [Op.or]: [{nome: nome}, {email: nome}]
     }})
-    if(user && user.senha == senha){
+    if(!user){
+        req.session.message = "Usuário não encontrado! Tente novamente"
+        res.redirect('/login')
+    }else if(senha != user.senha){
+        req.session.message = "Senha incorreta! Tente novamente"
+        res.redirect('/login')
+    }else{
         req.session.currentUser = user
         res.redirect('/dashboard')
-    }else{
-        res.redirect('/login')
     }
     
 })

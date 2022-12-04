@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <script src="JS/modal.js" type="module" defer></script>
 
     <title>Meu PC roda?</title>
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
+        <% if (message) { %>
+            <div class="modal">
+                <button>x</button>
+               <p><%= message %></p>
+            </div>
+           <% } %>
             <section class="login">
                 <div class="login-presentation">
                     <h3>Faça login e contribua com a gente!</h3>
