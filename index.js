@@ -82,15 +82,19 @@ app.post('/registro', async (req, res)=>{
     const user = await User.findOne({where:{
         [Op.or]: [{nome: nome},{email: email}]
     }})
-    if(user === null && senha == senhaConfirm){
+    if(user){
+        req.session.message = "Já existe um usuário com esse nome ou email! Tente outro"
+        res.redirect('/registro')
+    }else if(senha != senhaConfirm){
+        req.session.message = "As senhas não combinam! Tente novamente"
+        res.redirect('/registro')
+    }else{
         const new_user = await User.create({
             nome: nome,
             email: email,
             senha: senha
         })
         res.redirect('/login')
-    }else{
-        res.redirect('/registro')
     }
 })
 

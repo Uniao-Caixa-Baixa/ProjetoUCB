@@ -6,6 +6,12 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
+        <% if (message) { %>
+            <div class="modal">
+                <button>x</button>
+               <p><%= message %></p>
+            </div>
+           <% } %>
         <section class="login">
             <div class="login-presentation">
                 <h3>Crie uma conta e contribua com a gente!</h3>
