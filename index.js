@@ -2,7 +2,11 @@
     const database = require('./db')
     const User = require('./models/User')
     const Game = require('./models/Game')
-    await database.sync()
+    const videoCard = require('./models/videoCard')
+    const Estilo = require('./models/Estilo')
+    const Suggestion = require('./models/Suggestion')
+
+    await database.sync({force:true})
 })()
 
 const User = require('./models/User')

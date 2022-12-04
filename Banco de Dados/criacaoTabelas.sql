@@ -1,6 +1,8 @@
 create table PlacaDeVideo(
 PlacaDeVideoId int(4) auto_increment not null primary key,
-PlacaDeVideoModelo varchar(30) not null);
+PlacaDeVideoModelo varchar(30) not null,
+PlacaDeVideoTier   integer(2) not null 
+);
 
 create table JogoPlacaDeVideo(
 JogoId int(4),

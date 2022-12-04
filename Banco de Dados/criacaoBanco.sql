@@ -8,6 +8,7 @@ CREATE TABLE Jogo (
     JogoPreco         DECIMAL(5,2) NOT NULL,
     JogoRam            INTEGER(2) NOT NULL,
     JogoArmazenamento    INTEGER(2) NOT NULL,
+    JogoTier			INTEGER(2) NOT NULL,
     PRIMARY KEY (JogoId)
 );
 
@@ -20,5 +21,6 @@ CREATE TABLE Estilo (
 CREATE TABLE Processador (
     ProcessadorId        INTEGER(4),
     ProcessadorModelo    VARCHAR(30) NOT NULL,
+    ProcessadorTier			INTEGER(2) NOT NULL,
     PRIMARY KEY (ProcessadorId)
 );
