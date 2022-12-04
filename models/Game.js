@@ -17,6 +17,14 @@ const Game = database.define('game', {
         type: Sequelize.FLOAT,
         allowNull: false
     },
+    ram:{
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    armazenamento:{
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
     tier:{
         type: Sequelize.INTEGER,
         allowNull: false

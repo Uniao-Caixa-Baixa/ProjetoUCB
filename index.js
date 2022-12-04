@@ -143,7 +143,7 @@ app.get('/insercaoJogos', async (req, res)=>{
 })
 
 app.post('/insercaoJogos', async (req, res)=>{
-    const { nome, estilo, preco, tier } = req.body
+    const { nome, ram, armazenamento, estilo, preco, tier } = req.body
 
     const game = await Game.findOne({where:{
         nome: nome
@@ -153,6 +153,8 @@ app.post('/insercaoJogos', async (req, res)=>{
         const style = await Style.findByPk(estilo)
         const new_game = await Game.create({
             nome: nome,
+            ram: ram,
+            armazenamento: armazenamento,
             preco: preco,
             tier: tier
         })
