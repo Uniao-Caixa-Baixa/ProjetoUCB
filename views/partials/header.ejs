@@ -4,7 +4,12 @@
     <a href="/"><img src="/images/logotipo-branco.svg" alt="logo"></a>
     <nav>
         <a class="navbar" href="/sobre">Sobre</a>
-        <a class="navbar" href="/login">Login</a>
-        <a class="navbar" href="/registro">Criar conta</a>
+        <% if (currentUser) { %>
+            <a class="navbar" href="/dashboard">Painel</a>
+        <% }else{ %>
+            <a class="navbar" href="/login">Login</a>
+            <a class="navbar" href="/registro">Criar conta</a>
+        <% } %>
+         
     </nav>
 </header>
