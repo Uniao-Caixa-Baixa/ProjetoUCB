@@ -31,7 +31,6 @@ app.use(session({secret: "mysecretkey"}))
 // Configuração para exibir pop-ups
 app.use((req, res, next)=>{
     res.locals.message = req.session.message
-    res.locals.currentUser = req.session.currentUser
     delete req.session.message
     next()
 })
@@ -109,7 +108,7 @@ app.get('/dashboard', (req, res)=>{
 })
 
 app.get('/sair', (req, res)=>{
-    req.session.currentUser = undefined   
+    req.session.currentUser = undefined    
     res.redirect('/')
 })
 
