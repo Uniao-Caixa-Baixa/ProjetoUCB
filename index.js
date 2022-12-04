@@ -1,7 +1,9 @@
+// Sincroniza / Cria tabelas no banco de dados
 (async ()=>{
     const database = require('./db')
     const User = require('./models/User')
     const Game = require('./models/Game')
+    const Style = require('./models/Style')
     const videoCard = require('./models/videoCard')
     const Estilo = require('./models/Estilo')
     const Suggestion = require('./models/Suggestion')
@@ -11,6 +13,7 @@
 
 const User = require('./models/User')
 const Game = require('./models/Game')
+const Style = require('./models/Style')
 const { Op } = require("sequelize");
 
 const express = require('express');
@@ -138,23 +141,28 @@ app.get('/alterarCargo', (req, res)=>{
     res.render('pages/alterarCargo')
 })
 
-app.get('/insercaoJogos', (req, res)=>{
-    res.render('pages/insercaoJogos')
+app.get('/insercaoJogos', async (req, res)=>{
+    const estilos = await Style.findAll()
+    res.render('pages/insercaoJogos', { estilos })
 })
 
 app.post('/insercaoJogos', async (req, res)=>{
-    const { nome, preco, tier } = req.body
+    const { nome, ram, armazenamento, estilo, preco, tier } = req.body
 
     const game = await Game.findOne({where:{
         nome: nome
     }})
 
     if (!game){
+        const style = await Style.findByPk(estilo)
         const new_game = await Game.create({
             nome: nome,
+            ram: ram,
+            armazenamento: armazenamento,
             preco: preco,
             tier: tier
         })
+        await new_game.addStyle(style)
         res.redirect('/jogos')
     }else{
         req.session.message = 'Esse jogo já existe! Por favor insira outro'
@@ -164,7 +172,8 @@ app.post('/insercaoJogos', async (req, res)=>{
 
 app.get('/jogos', async (req, res)=>{
     const jogos = await Game.findAll()
-    res.render('pages/jogos', { jogos })
+    const estilos = await Style.findAll()
+    res.render('pages/jogos', { jogos, estilos })
 })
 
 app.get('/insercaoComp', (req, res)=>{

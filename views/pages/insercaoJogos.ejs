@@ -18,16 +18,16 @@
                 <p>Preencha os campos abaixo</p>
                 <label for="nome">Nome</label>
                 <input name="nome" type="text" required>
+                <label for="ram">RAM</label>
+                <input name="ram" type="number" required>
+                <label for="armazenamento">Armazenamento</label>
+                <input name="armazenamento" type="number" required>
                 <label for="estilo">Estilo:</label>
                 <select name="estilo" required>
                     <option value="" selected disabled hidden></option>
-                    <option value="Luta">Luta</option>
-                    <option value="Sobrevivencia">Sobrevivencia</option>
-                    <option value="FPS">FPS</option>
-                    <option value="Moba">Moba</option>
-                    <option value="Ação/Aventura">Ação/Aventura</option>
-                    <option value="Esportes">Esportes</option>
-                    <option value="Outros">Outros</option>
+                    <% for( let estilo of estilos ) { %>
+                        <option value="<%= estilo.id %>"><%= estilo.nome %></option>
+                    <% } %>
                 </select>
                 <label for="preco">R$</label>
                 <input type="number" min="0.00" max="999999.99" step="0.01" name="preco" required>
