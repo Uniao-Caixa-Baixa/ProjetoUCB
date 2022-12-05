@@ -180,13 +180,17 @@ label{
     flex-direction: row;
 }
 
+.login-presentation{
+    margin-right: 5vh;
+}
+
 .login-presentation img{
-    max-width: 100%;
+    max-width: 50vh;
 }
 
 .login-presentation h3{
-    margin-left: 6vw;
-    margin-bottom: -5vh;
+    text-align: center;
+    margin-bottom: 3vh;
 }
 
 .login-card{
@@ -491,4 +495,80 @@ a{
 
 .modal > button:hover{
     background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1200px) {
+    section{
+        max-width: 70vw;
+    }
+
+    form{
+        min-width: 50vw;
+    }
+
+    .login{
+        flex-direction: column;
+    }
+
+    .login-card{
+        margin: 1vh auto;
+    }
+
+    .login-presentation{
+        margin: 0 auto;
+    }
+
+    .modal{
+        width: 60vw;
+    }
+    
+    .modal > p{
+        font-size: 1.3rem;
+    }
+
+}
+
+@media (max-width: 900px) {
+    section{
+        max-width: 90vw;
+    }
+
+    form{
+        min-width: 60vw;
+    }
+
+    .login-card{
+        margin: 0 auto;
+    }
+
+    .login-presentation h3{
+        margin-bottom: 0 auto;
+    }
+
+    .modal{
+        width: 70vw;
+    }
+    
+    .modal > p{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 640px){
+    section{
+        max-width: 100vw;
+    }
+
+    form{
+        min-width: 80vw;
+    }
+
+    .modal{
+        width: 80vw;
+    }
+    
+    .modal > p{
+        font-size: 1rem;
+    }
+
 }
