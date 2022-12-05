@@ -5,6 +5,7 @@
     const Game = require('./models/Game')
     const Style = require('./models/Style')
     const videoCard = require('./models/videoCard')
+    const Processor = require('./models/Processor')
     const Estilo = require('./models/Estilo')
     const Suggestion = require('./models/Suggestion')
 
