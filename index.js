@@ -9,7 +9,14 @@
     const Suggestion = require('./models/Suggestion')
 
     await database.sync({force:true})
-})()
+
+    const userAdimn = await User.create({
+        nome: 'admin',
+        email: 'admin@admin.com',
+        senha: 'admin123',
+        tipo:   'admin'
+    })
+})();
 
 const User = require('./models/User')
 const Game = require('./models/Game')
