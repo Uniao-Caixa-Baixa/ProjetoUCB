@@ -11,8 +11,8 @@
         <section id="dashboard">
                 <div class="tabs-btn-box">
                     <button class="tab-btn">Início</button>
-                    <% if (currentUser.tipo == "ADM"){ %>
-                        <button class="adm tab-btn">ADM</button>
+                    <% if (currentUser.tipo == "admin"){ %>
+                        <button class="adm tab-btn">Admin</button>
                     <% } %>
                     <button class="tab-btn">Conta</button>
                 </div>
@@ -22,9 +22,9 @@
                 <a id="inserc" href="insercaoComp">Sugerir componente</a>
             </div>
 
-            <% if (currentUser.tipo == "ADM") { %>
+            <% if (currentUser.tipo == "admin") { %>
                 <div class="tab-content">
-                    <h3>ADM</h3>
+                    <h3>Admin</h3>
                     <p>Gerencie cargos e insira jogos</p>
                     <a id="isercGames" href="/insercaoJogos">Inserir jogo</a>
                     <a id="alteraCargo" href="/alterarCargo">Alterar cargo</a>

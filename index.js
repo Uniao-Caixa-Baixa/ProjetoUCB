@@ -151,7 +151,7 @@ app.post('/alterarCargo', async (req, res)=>{
         req.session.message = 'Usuário não encontrado'
         res.redirect('/alterarCargo')
     }else{
-        user.tipo = 'ADM'
+        user.tipo = 'admin'
         await user.save()
         res.redirect('/dashboard')
     }
