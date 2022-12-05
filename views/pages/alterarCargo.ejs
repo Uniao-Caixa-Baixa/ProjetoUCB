@@ -6,11 +6,17 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
+        <% if (message) { %>
+            <div class="modal">
+                <button>x</button>
+               <p><%= message %></p>
+            </div>
+           <% } %>
         <section>
-            <form action="" class="login-card">
+            <form action="/alterarCargo" method="post" class="login-card">
                 <h3>Alterar cargo:</h3>
                 <p>Preencha o campo abaixo</p>
-                <label for="">Email:</label>
+                <label for="email">Email:</label>
                 <input name="email" type="email" placeholder="Qual usuário você deseja tornar ADM?" required>
                 <input class="p-button" type="submit">
             </form>

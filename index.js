@@ -8,7 +8,7 @@
     const Estilo = require('./models/Estilo')
     const Suggestion = require('./models/Suggestion')
 
-    await database.sync({force:true})
+    await database.sync()
 })()
 
 const User = require('./models/User')
@@ -139,6 +139,22 @@ app.put('/alterarSenha', async (req, res)=>{
 
 app.get('/alterarCargo', (req, res)=>{
     res.render('pages/alterarCargo')
+})
+
+app.post('/alterarCargo', async (req, res)=>{
+    const { email } = req.body
+    const user = await User.findOne({where:{
+        email: email
+    }})
+
+    if (!user){
+        req.session.message = 'Usuário não encontrado'
+        res.redirect('/alterarCargo')
+    }else{
+        user.tipo = 'ADM'
+        await user.save()
+        res.redirect('/dashboard')
+    }
 })
 
 app.get('/insercaoJogos', async (req, res)=>{
