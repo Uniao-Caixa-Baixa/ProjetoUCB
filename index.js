@@ -243,7 +243,6 @@ app.get('/suporte', (req, res)=>{
     res.render('pages/suporte')
 })
 
-<<<<<<< Updated upstream
 app.get('/processors', async (req, res)=>{
     if (!req.session.currentUser){
         req.session.message = "Você precisa estar logado para continuar!"
@@ -318,14 +317,12 @@ app.delete('/processors/:id', async (req, res)=>{
     await processador.destroy()
     res.redirect('/processors')
 })
-=======
 app.get('/videocards', async(req, res)=>{
 
     const videocards = await videoCard.findAll()
 
     res.status(200).render('pages/videoCards', {videocards});
 });
->>>>>>> Stashed changes
 
 app.listen(port, ()=>{
     console.log(`Server running on port ${port}...`)
