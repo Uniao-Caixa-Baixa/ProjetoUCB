@@ -565,6 +565,7 @@ tr:nth-child(odd){
 
 th{
     padding: 10px;
+    color: white;
 }
 
 .fake-form{
