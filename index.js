@@ -318,10 +318,18 @@ app.delete('/processors/:id', async (req, res)=>{
     res.redirect('/processors')
 })
 app.get('/videocards', async(req, res)=>{
+    if (!req.session.currentUser){
+        req.session.message = "Você precisa estar logado para continuar!"
+        res.redirect('/login')
+    }else if(req.session.currentUser.tipo != 'admin'){
+        req.session.message = "Você não tem permissão para acessar essa página!"
+        res.redirect('/login')
+    }else{
+        const videocards = await videoCard.findAll()
+        res.status(200).render('pages/videoCards/showAll', {videocards});
+    }
 
-    const videocards = await videoCard.findAll()
-
-    res.status(200).render('pages/videoCards/showAll', {videocards});
+    
 });
 
 app.get('/videocards/new', (req, res)=>{
