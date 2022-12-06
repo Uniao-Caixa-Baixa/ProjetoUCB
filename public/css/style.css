@@ -289,6 +289,25 @@ label{
     background: var(--cor-primaria);
 }
 
+.danger-button{
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    outline: 0px;
+    border: 1px solid var(--cor-terciaria);
+    color: var(--cor-terciaria);
+    background-color: var(--bg-color);
+    margin: 10px 0px;
+    transition: background-color .2s, color .2s;
+}
+
+.danger-button:hover{
+    color: white;
+    background: var(--cor-terciaria);
+}
+
 .button-box{
     display: flex;
     flex-direction: row;
@@ -521,7 +540,7 @@ tr{
     width: 100%;
 }
 
-tr:nth-child(3n){
+tr:nth-child(odd){
     background-color: var(--bg-color-secundaria);
 }
 
@@ -529,6 +548,9 @@ th{
     padding: 10px;
 }
 
+.fake-form{
+    display: inline;
+}
 
 
 @media (max-width: 1200px) {

@@ -276,6 +276,14 @@ app.post('/processors/new', async (req, res)=>{
     }
 })
 
+app.delete('/processors/:id', async (req, res)=>{
+    const {id} = req.params
+    
+    const processador = await Processor.findByPk(id)
+    await processador.destroy()
+    res.redirect('/processors')
+})
+
 app.listen(port, ()=>{
     console.log(`Server running on port ${port}...`)
 })
