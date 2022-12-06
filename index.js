@@ -362,6 +362,30 @@ app.post('/videocards/new', async (req, res)=>{
     }
 })
 
+app.get('/videocards/:id/edit', async (req, res)=>{
+    if (!req.session.currentUser){
+        req.session.message = "Você precisa estar logado para continuar!"
+        res.redirect('/login')
+    }else if(req.session.currentUser.tipo != 'admin'){
+        req.session.message = "Você não tem permissão para acessar essa página!"
+        res.redirect('/dashboard')
+    }else{
+        const { id } = req.params
+        const videocard = await videoCard.findByPk(id)
+        res.render('pages/videocards/edit', { videocard })
+    }
+})
+
+app.put('/videocards/:id/edit', async (req, res)=>{
+    const { id } = req.params
+    const { modelo, tier } = req.body
+    const videocard = await videoCard.findByPk(id)
+    videocard.modelo = modelo
+    videocard.tier = tier
+    await videocard.save()
+    res.redirect('/videocards')
+})
+
 app.delete('/videocards/:id', async (req, res)=>{
     const {id} = req.params
 

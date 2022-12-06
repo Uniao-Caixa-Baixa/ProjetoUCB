@@ -13,13 +13,13 @@
             </div>
            <% } %>
         <section>
-            <form action="/processors/<%= processador.id %>/edit?_method=PUT" method="post" class="login-card">
-                <h3>Modificar processador</h3>
+            <form action="/videocards/<%= videocard.id %>/edit?_method=PUT" method="post" class="login-card">
+                <h3>Modificar placa de vídeo</h3>
                 <p>Preencha os campos abaixo</p>
                 <label for="modelo">Modelo</label>
-                <input name="modelo" type="text" required value="<%= processador.modelo %>">
+                <input name="modelo" type="text" required value="<%= videocard.modelo %>">
                 <label for="tier">Tier</label>
-                <input type="number" min="1" max="7" name="tier" required value="<%= processador.tier %>">
+                <input type="number" min="1" max="7" name="tier" required value="<%= videocard.tier %>">
                 <input class="p-button" type="submit">
             </form>
         </section>
