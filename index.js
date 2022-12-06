@@ -17,11 +17,21 @@
         senha: 'admin123',
         tipo:   'admin'
     })
+
+/*     const newVideoCard = await videoCard.create({
+        modelo: "GTX1660",
+        tier: 5
+    }) */
+/*     const newVideoCard = await videoCard.create({
+        modelo: "GTX1650 Super",
+        tier: 4
+    }) */
 })();
 
 const User = require('./models/User')
 const Game = require('./models/Game')
 const Style = require('./models/Style')
+const videoCard = require('./models/videoCard')
 const { Op } = require("sequelize");
 
 const express = require('express');
@@ -233,6 +243,7 @@ app.get('/suporte', (req, res)=>{
     res.render('pages/suporte')
 })
 
+<<<<<<< Updated upstream
 app.get('/processors', async (req, res)=>{
     if (!req.session.currentUser){
         req.session.message = "Você precisa estar logado para continuar!"
@@ -307,6 +318,14 @@ app.delete('/processors/:id', async (req, res)=>{
     await processador.destroy()
     res.redirect('/processors')
 })
+=======
+app.get('/videocards', async(req, res)=>{
+
+    const videocards = await videoCard.findAll()
+
+    res.status(200).render('pages/videoCards', {videocards});
+});
+>>>>>>> Stashed changes
 
 app.listen(port, ()=>{
     console.log(`Server running on port ${port}...`)
