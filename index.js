@@ -276,9 +276,33 @@ app.post('/processors/new', async (req, res)=>{
     }
 })
 
+app.get('/processors/:id/edit', async (req, res)=>{
+    if (!req.session.currentUser){
+        req.session.message = "Você precisa estar logado para continuar!"
+        res.redirect('/login')
+    }else if(req.session.currentUser.tipo != 'admin'){
+        req.session.message = "Você não tem permissão para acessar essa página!"
+        res.redirect('/dashboard')
+    }else{
+        const { id } = req.params
+        const processador = await Processor.findByPk(id)
+        res.render('pages/processors/edit', { processador })
+    }
+})
+
+app.put('/processors/:id/edit', async (req, res)=>{
+    const { id } = req.params
+    const { modelo, tier } = req.body
+    const processador = await Processor.findByPk(id)
+    processador.modelo = modelo
+    processador.tier = tier
+    await processador.save()
+    res.redirect('/processors')
+})
+
 app.delete('/processors/:id', async (req, res)=>{
     const {id} = req.params
-    
+
     const processador = await Processor.findByPk(id)
     await processador.destroy()
     res.redirect('/processors')

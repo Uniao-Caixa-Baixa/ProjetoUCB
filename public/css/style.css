@@ -308,6 +308,25 @@ label{
     background: var(--cor-terciaria);
 }
 
+.t-button{
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    outline: 0px;
+    border: 1px solid var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    background-color: var(--bg-color);
+    margin: 10px 0px;
+    transition: background-color .2s, color .2s;
+}
+
+.t-button:hover{
+    color: white;
+    background: var(--cor-secundaria);
+}
+
 .button-box{
     display: flex;
     flex-direction: row;

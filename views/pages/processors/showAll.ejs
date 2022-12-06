@@ -13,11 +13,13 @@
                 <th class="table-header">Modelo</th>
                 <th class="table-header">Tier</th>
                 <th class="table-header"></th>
+                <th class="table-header"></th>
             </tr>
             <% for(let processador of processadores ) { %>
                 <tr>
                     <td><%= processador.modelo %></td>
                     <td><%= processador.tier %></td>
+                    <td><a class="t-button" href="/processors/<%= processador.id %>/edit">Editar</a></td>
                     <td><form class="fake-form" action="/processors/<%= processador.id %>?_method=DELETE" method="post">
                         <button class="danger-button">Excluir</button>
                     </form></td>
