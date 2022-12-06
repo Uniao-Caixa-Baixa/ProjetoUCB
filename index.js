@@ -243,7 +243,6 @@ app.get('/suporte', (req, res)=>{
     res.render('pages/suporte')
 })
 
-<<<<<<< Updated upstream
 app.get('/processors', async (req, res)=>{
     if (!req.session.currentUser){
         req.session.message = "Você precisa estar logado para continuar!"
@@ -318,14 +317,51 @@ app.delete('/processors/:id', async (req, res)=>{
     await processador.destroy()
     res.redirect('/processors')
 })
-=======
+
 app.get('/videocards', async(req, res)=>{
 
     const videocards = await videoCard.findAll()
 
-    res.status(200).render('pages/videoCards', {videocards});
+    res.status(200).render('pages/videoCards/showAll', {videocards});
 });
->>>>>>> Stashed changes
+
+app.get('/videocards/new', (req, res)=>{
+    if (!req.session.currentUser){
+        req.session.message = "Você precisa estar logado para continuar!"
+        res.redirect('/login')
+    }else if(req.session.currentUser.tipo != 'admin'){
+        req.session.message = "Você não tem permissão para acessar essa página!"
+        res.redirect('/dashboard')
+    }else{
+        res.render('pages/videoCards/new')
+    }
+})
+
+app.post('/videocards/new', async (req, res)=>{
+    const {modelo, tier} = req.body
+    const videocard = await videoCard.findOne({where:{
+        modelo: modelo
+    }})
+
+    if (videocard){
+        req.session.message = "Esse modelo já existe! Tente outro"
+        res.redirect('/videocards/new')
+    }else{
+        await videoCard.create({
+            modelo: modelo,
+            tier: tier
+        })
+        res.redirect('/videocards')
+    }
+})
+
+app.delete('/videocards/:id', async (req, res)=>{
+    const {id} = req.params
+
+    const videocards = await videoCard.findByPk(id)
+    await videocards.destroy()
+    res.redirect('/videocards')
+})
 
 app.listen(port, ()=>{
     console.log(`Server running on port ${port}...`)

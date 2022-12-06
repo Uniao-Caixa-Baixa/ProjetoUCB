@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('../../partials/head.ejs') %>
+<body>
+    <%- include('../../partials/header.ejs') %>
+    <h1>Lista de placas de vídeo</h1>
+    <section>    
+        <a href="/videocards/new" class="s-button">Inserir placa de vídeo</a>
+        <table>
+            <tr>
+                <th class="table-header">Modelo</th>
+                <th class="table-header">Tier</th>
+                <th class="table-header"></th>
+                <th class="table-header"></th>
+            </tr>
+    
+            <% for( let videocard of videocards) { %>
+                <td><%= videocard.modelo %></td>
+                <td><%= videocard.tier %></td>
+                <td><a class="t-button" href="/videocards/<%= videocard.id %>/edit">Editar</a></td>
+                <td><form class="fake-form" action="/videocards/<%= videocard.id %>?_method=DELETE" method="post">
+                    <button class="danger-button">Excluir</button>
+                </form></td>
+            </tr>
+            <% } %>
+        </table>
+    </section>
+
+
+</body>
+</html>
