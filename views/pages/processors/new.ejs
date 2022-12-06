@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+    <%- include('../../partials/head.ejs') %>
+
+<body>
+    <%- include('../../partials/header.ejs') %>
+    <main>
+        <% if (message) { %>
+            <div class="modal">
+                <button>x</button>
+               <p><%= message %></p>
+            </div>
+           <% } %>
+        <section>
+            <form action="/processors/new" method="post" class="login-card">
+                <h3>Inserir processador</h3>
+                <p>Preencha os campos abaixo</p>
+                <label for="modelo">Modelo</label>
+                <input name="modelo" type="text" required>
+                <label for="tier">Tier</label>
+                <input type="number" min="1" max="7" name="tier" required>
+                <input class="p-button" type="submit">
+            </form>
+        </section>
+    </main>
+    
+</body>
+</html>

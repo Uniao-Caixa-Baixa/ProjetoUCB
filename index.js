@@ -28,6 +28,7 @@ const express = require('express');
 const session = require('express-session')
 const methodOverride = require('method-override')
 const { resolve } = require('path');
+const Processor = require('./models/Processor');
 
 const port = 3000
 const app = express()
@@ -230,6 +231,49 @@ app.get('/sobre', (req, res)=>{
 
 app.get('/suporte', (req, res)=>{
     res.render('pages/suporte')
+})
+
+app.get('/processors', async (req, res)=>{
+    if (!req.session.currentUser){
+        req.session.message = "Você precisa estar logado para continuar!"
+        res.redirect('/login')
+    }else if(req.session.currentUser.tipo != 'admin'){
+        req.session.message = "Você não tem permissão para acessar essa página!"
+        res.redirect('/login')
+    }else{
+        const processadores = await Processor.findAll()
+        res.render('pages/processors/showAll', {  processadores  })
+    }
+})
+
+app.get('/processors/new', (req, res)=>{
+    if (!req.session.currentUser){
+        req.session.message = "Você precisa estar logado para continuar!"
+        res.redirect('/login')
+    }else if(req.session.currentUser.tipo != 'admin'){
+        req.session.message = "Você não tem permissão para acessar essa página!"
+        res.redirect('/dashboard')
+    }else{
+        res.render('pages/processors/new')
+    }
+})
+
+app.post('/processors/new', async (req, res)=>{
+    const {modelo, tier} = req.body
+    const processador = await Processor.findOne({where:{
+        modelo: modelo
+    }})
+
+    if (processador){
+        req.session.message = "Esse modelo já existe! Tente outro"
+        res.redirect('/processors/new')
+    }else{
+        await Processor.create({
+            modelo: modelo,
+            tier: tier
+        })
+        res.redirect('/processors')
+    }
 })
 
 app.listen(port, ()=>{

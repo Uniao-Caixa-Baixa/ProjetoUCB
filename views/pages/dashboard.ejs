@@ -7,6 +7,12 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main>
+        <% if (message) { %>
+            <div class="modal">
+                <button>x</button>
+               <p><%= message %></p>
+            </div>
+           <% } %>
         <h1>Bem-vindo</h1>
         <section id="dashboard">
                 <div class="tabs-btn-box">

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <%- include('../../partials/head.ejs') %>
+    
+<body>
+    <%- include('../../partials/header.ejs') %>
+    <h1>Lista de Processadores</h1>
+    <section>
+        <a href="/processors/new" class="s-button">Inserir processador</a>
+        <table>
+            <tr class="table-header">
+                <th>Modelo</th>
+                <th>Tier</th>
+            </tr>
+            <% for(let processador of processadores ) { %>
+                <tr>
+                    <td><%= processador.modelo %></td>
+                    <td><%= processador.tier %></td>
+                </tr>
+                <% } %>
+        </table>
+        <ul>
+        </ul>
+    </section>
+    
+</body>
+</html>

@@ -284,6 +284,11 @@ label{
     transition: background-color .2s, color .2s;
 }
 
+.s-button:hover{
+    color: white;
+    background: var(--cor-primaria);
+}
+
 .button-box{
     display: flex;
     flex-direction: row;
@@ -496,6 +501,35 @@ a{
 .modal > button:hover{
     background-color: rgba(0, 0, 0, 0.3);
 }
+
+table{
+    width: 60vw;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.table-header{
+    background-color: var(--cor-secundaria);
+}
+
+td{
+    text-align: center;
+    padding: 10px 0;
+}
+
+tr{
+    width: 100%;
+}
+
+tr:nth-child(3n){
+    background-color: var(--bg-color-secundaria);
+}
+
+th{
+    padding: 10px;
+}
+
+
 
 @media (max-width: 1200px) {
     section{
