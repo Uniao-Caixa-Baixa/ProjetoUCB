@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt_br">
-    <script src="JS/home.js" defer></script>
-    <script src="JS/carregaComponentes.js" defer></script>
-    <script src="JS/acessaListaJogos.js" defer></script>
+
     <%- include('partials/head.ejs') %>
     
 <body>
@@ -22,7 +20,9 @@
                 <label for="processador">Processador</label>
                 <select name="processadores" id="processadores" required>
                     <option value="" selected disabled hidden></option>
-
+                    <% for( let processador of processadores){ %>
+                        <option value="<%= processador.id %> "><%= processador.modelo %></option>
+                    <% } %>
                 </select>
                 <label for="ram">Memória RAM</label>
                 <input type="number" min="1" max="16" name="ram" id="ram" required>
@@ -31,7 +31,9 @@
                 <label for="placa-video">Placa de vídeo</label>
                 <select name="placaVideo" id="placaVideo">
                     <option value="" selected disabled hidden></option>
-
+                    <% for( let placaVideo of placasVideo){ %>
+                        <option value="<%= placaVideo.id %> "><%= placaVideo.modelo %></option>
+                    <% } %>
                 </select>
                 <a href="/suporte">Não encontrei o componente que queria</a>
                 <input type="submit" class="p-button">

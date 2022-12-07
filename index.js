@@ -64,8 +64,10 @@ app.use((req, res, next)=>{
 
 var currentUser
 
-app.get('/', (req, res)=>{
-    res.render('index')
+app.get('/', async (req, res)=>{
+    const processadores = await Processor.findAll()
+    const placasVideo = await videoCard.findAll()
+    res.render('index', { processadores, placasVideo })
 })
 
 app.get('/login', (req, res)=>{
