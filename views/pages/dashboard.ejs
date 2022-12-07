@@ -19,7 +19,8 @@
                 <div class="tabs-btn-box">
                     <button class="tab-btn">Início</button>
                     <% if (currentUser.tipo == "admin"){ %>
-                        <button class="adm tab-btn">Admin</button>
+                        <button class="adm tab-btn">Usuários</button>
+                        <button class="adm tab-btn">Sistema</button>
                     <% } %>
                     <button class="tab-btn">Conta</button>
                 </div>
@@ -31,13 +32,18 @@
 
             <% if (currentUser.tipo == "admin") { %>
                 <div class="tab-content">
-                    <h3>Admin</h3>
-                    <p>Gerencie cargos e insira jogos</p>
+                    <h3>Usuários</h3>
+                    <p>Gerencie cargos e sugestões</p>
+                    
+                    <a id="verSugestoes" href="/sugestoes">Sugestões</a>
+                    <a id="alteraCargo" href="/alterarCargo">Alterar cargo</a>
+                </div>
+                <div class="tab-content">
+                    <h3>Sistema</h3>
+                    <p>Gerencie jogos e componentes</p>
                     <a id="isercGames" href="/insercaoJogos">Inserir jogo</a>
                     <a id="verProcessors" href="/processors">Processadores</a>
                     <a id="verVideocards" href="/videocards">Placas de vídeo</a>
-                    <a id="verSugestoes" href="/sugestoes">Sugestões</a>
-                    <a id="alteraCargo" href="/alterarCargo">Alterar cargo</a>
                 </div>
             <% } %>
 

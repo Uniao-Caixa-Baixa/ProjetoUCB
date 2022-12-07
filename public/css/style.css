@@ -455,10 +455,6 @@ a{
     border-radius: 5px;
 }
 
-.tab-btn{
-    background-color: white;
-}
-
 .tab-btn:hover{
     background-color: var(--bg-color-secundaria);
 }
@@ -466,6 +462,7 @@ a{
 .tab-btn{
     padding: 20px;
     border: none;
+    text-align: center;
     font-size: 1rem;
     font-family: var(--fonte-texto);
     font-weight: bold;
