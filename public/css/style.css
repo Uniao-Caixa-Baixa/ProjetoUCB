@@ -128,7 +128,7 @@ input:not([type="submit"]){
     border-radius: 3px;
     border: 0px;
     outline: 0px;
-    color: var(--cor-terciaria);
+    color: rgb(175, 97, 97);
     margin-bottom: 10px;
     transition: outline 150ms;
     padding: 5px;
@@ -152,6 +152,7 @@ input:not([type="submit"]):focus{
 }
 
 
+
 select{
     background-color: var(--bg-color-secundaria);
     border-radius: 3px;
@@ -173,24 +174,6 @@ label{
     margin-top: 20px;
     color: black;
     font-weight: bold;
-}
-
-textarea{
-    resize: none;
-    background-color: var(--bg-color-secundaria);
-    border-radius: 3px;
-    border: 0px;
-    outline: 0px;
-    color: var(--cor-terciaria);
-    margin-bottom: 10px;
-    transition: outline 150ms;
-    padding: 5px;
-}
-
-textarea:focus{
-    color: black;
-    background-color: var(--bg-color);
-    outline: 1px solid var(--cor-terciaria);
 }
 
 .login{
