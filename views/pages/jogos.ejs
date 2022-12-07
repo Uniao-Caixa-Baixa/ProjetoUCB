@@ -12,7 +12,7 @@
             <select name="estilo">
                 <option value="" selected>Estilo</option>
                 <% for( let estilo of estilos ) { %>
-                    <option value="<%= estilo.id %>"><%= estilo.nome %></option>
+                    <option value="<%= estilo.id %>"><%= estilo.descricao %></option>
                 <% } %>
             </select>
             <select name="preco" id="preco">

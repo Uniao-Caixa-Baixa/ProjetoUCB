@@ -26,7 +26,7 @@
                 <select name="estilo" required>
                     <option value="" selected disabled hidden></option>
                     <% for( let estilo of estilos ) { %>
-                        <option value="<%= estilo.id %>"><%= estilo.nome %></option>
+                        <option value="<%= estilo.id %>"><%= estilo.descricao %></option>
                     <% } %>
                 </select>
                 <label for="preco">R$</label>

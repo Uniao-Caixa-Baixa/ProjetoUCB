@@ -3,7 +3,6 @@
     const database = require('./db')
     const User = require('./models/User')
     const Game = require('./models/Game')
-    const Style = require('./models/Style')
     const videoCard = require('./models/videoCard')
     const Processor = require('./models/Processor')
     const Estilo = require('./models/Estilo')
@@ -11,12 +10,28 @@
 
     await database.sync()
 
-    const userAdimn = await User.create({
+    await User.create({
         nome: 'admin',
         email: 'admin@admin.com',
         senha: 'admin123',
         tipo:   'admin'
     })
+
+    /* const e1 = await Estilo.create({
+        descricao: 'Sobrevivência'
+    })
+
+    await Estilo.create({
+        descricao: 'FPS'
+    })
+
+    await Estilo.create({
+        descricao: 'Aventura'
+    })
+
+    await Estilo.create({
+        descricao: 'Simulação'
+    }) */
 
 /*     const newVideoCard = await videoCard.create({
         modelo: "GTX1660",
@@ -30,16 +45,16 @@
 
 const User = require('./models/User')
 const Game = require('./models/Game')
-const Style = require('./models/Style')
 const videoCard = require('./models/videoCard')
+const Estilo = require('./models/Estilo');
+const Processor = require('./models/Processor');
+const Suggestion = require('./models/Suggestion');
 const { Op } = require("sequelize");
 
 const express = require('express');
 const session = require('express-session')
 const methodOverride = require('method-override')
 const { resolve } = require('path');
-const Processor = require('./models/Processor');
-const Suggestion = require('./models/Suggestion');
 
 const port = 3000
 const app = express()
@@ -64,8 +79,10 @@ app.use((req, res, next)=>{
 
 var currentUser
 
-app.get('/', (req, res)=>{
-    res.render('index')
+app.get('/', async (req, res)=>{
+    const processadores = await Processor.findAll()
+    const placasVideo = await videoCard.findAll()
+    res.render('index', { processadores, placasVideo })
 })
 
 app.get('/login', (req, res)=>{
@@ -178,7 +195,7 @@ app.post('/alterarCargo', async (req, res)=>{
 })
 
 app.get('/insercaoJogos', async (req, res)=>{
-    const estilos = await Style.findAll()
+    const estilos = await Estilo.findAll()
     res.render('pages/insercaoJogos', { estilos })
 })
 
@@ -190,7 +207,7 @@ app.post('/insercaoJogos', async (req, res)=>{
     }})
 
     if (!game){
-        const style = await Style.findByPk(estilo)
+        const style = await Estilo.findByPk(estilo)
         const new_game = await Game.create({
             nome: nome,
             ram: ram,
@@ -198,7 +215,7 @@ app.post('/insercaoJogos', async (req, res)=>{
             preco: preco,
             tier: tier
         })
-        await new_game.addStyle(style)
+        await new_game.addEstilo(style)
         res.redirect('/jogos')
     }else{
         req.session.message = 'Esse jogo já existe! Por favor insira outro'
@@ -208,7 +225,7 @@ app.post('/insercaoJogos', async (req, res)=>{
 
 app.get('/jogos', async (req, res)=>{
     const jogos = await Game.findAll()
-    const estilos = await Style.findAll()
+    const estilos = await Estilo.findAll()
     res.render('pages/jogos', { jogos, estilos })
 })
 

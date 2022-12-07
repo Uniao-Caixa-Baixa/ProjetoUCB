@@ -1,6 +1,6 @@
 const database = require('../db')
 const Sequelize = require('sequelize')
-const Style = require('./Style')
+const Estilo = require('./Estilo')
 const GameStyle = require('./GameStyle')
 
 const Game = database.define('game', {
@@ -32,12 +32,12 @@ const Game = database.define('game', {
     }
 )
 
-Game.belongsToMany(Style, {
+Game.belongsToMany(Estilo, {
     through:  GameStyle,
     constraint: true
 })
 
-Style.belongsToMany(Game, {
+Estilo.belongsToMany(Game, {
     through:  GameStyle,
     constraint: true
 })
