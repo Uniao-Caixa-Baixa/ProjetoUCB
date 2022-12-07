@@ -8,12 +8,12 @@
         <main id="mainComp">
             <section>
                 <h1>Página de sugestões de dados</h1>
-                <p><b>Aqui os usuários podem dar sugestões de componentes que eles desejam ver no site caso eles não existam</b></p>
             </section>
-            <br>
             <section id="componentes">
                 <form action="/sugestao/new" method="post"  class="login-card" id="checkForm">
                     <h3>O que deseja sugerir?</h3>
+                    <p>Você pode sugerir componentes, jogos ou estilos que gostaria de ver no nosso site</p>
+                    <label for="componente">Tipo de sugestão</label>
                     <select name="componente" id="componente" required>
                         <option value="" selected disabled hidden></option>
                         <option value="Processador">Processador</option>
@@ -22,10 +22,10 @@
                         <option value="Estilo">Estilo</option>
     
                     </select>
-
+                    <label for="sugestao">Descrição</label>
                     <textarea name="sugestao" id="sugestao" cols="30" rows="5"></textarea>
 
-                    <input class="inserc" type="submit">
+                    <input class="p-button" type="submit">
                 </form>
             </section>
         </main>
