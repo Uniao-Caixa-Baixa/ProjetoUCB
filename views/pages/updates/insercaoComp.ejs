@@ -7,39 +7,26 @@
     <%- include('../../partials/header.ejs') %>
         <main id="mainComp">
             <section>
-                <h1>Página de inserção de dados</h1>
+                <h1>Página de sugestões de dados</h1>
                 <p><b>Aqui os usuários podem dar sugestões de componentes que eles desejam ver no site caso eles não existam</b></p>
             </section>
             <br>
             <section id="componentes">
-                <form action="" class="login-card" id="checkForm">
-                    <h3>Quais componentes deseja inserir?</h3>
-                        <label for="checkProc">Processador</label>
-                        <input type="checkbox" id="checkProc" value="divProc">
-                    
-                        <label for="">Placa de vídeo</label>
-                        <input type="checkbox" id="checkPlacaVideo">
+                <form action="/sugestao/new" method="post"  class="login-card" id="checkForm">
+                    <h3>O que deseja sugerir?</h3>
+                    <select name="componente" id="componente" required>
+                        <option value="" selected disabled hidden></option>
+                        <option value="Processador">Processador</option>
+                        <option value="Placa de Vídeo">Placa de Vídeo</option>
+                        <option value="Jogo">Jogo</option>
+                        <option value="Estilo">Estilo</option>
+    
+                    </select>
 
-                        <input type="submit" class="inserc"></input>
+                    <textarea name="sugestao" id="sugestao" cols="30" rows="5"></textarea>
+
+                    <input class="inserc" type="submit">
                 </form>
-            </section>
-            <section>
-               <form action="" class="login-card" id="formComp">
-                <h3>Digite os componentes selecionados aqui:</h3>
-                
-                <div id="divProc">
-                    <label for="">Processador:</label>
-                    <input id="" type="text" name="proc">
-                </div>
-               
-                <div id="divPlacaVideo">
-                    <label for="">Placa de vídeo:</label>
-                    <input type="text" name="placaVideo">
-                </div>
-                
-                <input type="submit" class="p-button" value="Enviar para os admins">
-               </form>
-                
             </section>
         </main>
 </body>

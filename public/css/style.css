@@ -14,7 +14,7 @@
     --cor-terciaria: #e4267c;
     --bg-color: #f1f0f0;
     --bg-color-secundaria: #dbdbdb;
-    --error-modal-color: #e4264f;
+    --error-modal-color: #e4264f; 
     --fonte-titulo: 'Odibee Sans', cursive;
     --fonte-texto: 'Open Sans', sans-serif;
 }
@@ -147,7 +147,7 @@ input:not([type="submit"]):focus{
     background-color: var(--cor-primaria);
     color: white;
     padding: 5px;
-    width: 300px;
+    width: 550px;
     margin-top: 20px;
 }
 

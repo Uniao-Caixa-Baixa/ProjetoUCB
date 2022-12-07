@@ -39,6 +39,7 @@ const session = require('express-session')
 const methodOverride = require('method-override')
 const { resolve } = require('path');
 const Processor = require('./models/Processor');
+const Suggestion = require('./models/Suggestion');
 
 const port = 3000
 const app = express()
@@ -392,6 +393,52 @@ app.delete('/videocards/:id', async (req, res)=>{
     const videocards = await videoCard.findByPk(id)
     await videocards.destroy()
     res.redirect('/videocards')
+})
+
+app.get('/sugestao/new', (req, res)=>{
+    if (!req.session.currentUser){
+        req.session.message = "Você precisa estar logado para continuar!"
+        res.redirect('/login')
+    }else if(req.session.currentUser.tipo != 'comum'){
+        req.session.message = "Você não tem permissão para acessar essa página!"
+        res.redirect('/dashboard')
+    }else{
+        res.render('pages/updates/insercaoComp')
+    }
+})
+
+app.post('/sugestao/new', async (req, res)=>{
+    const {componente, sugestao} = req.body
+   
+    await Suggestion.create({
+        componente: componente,
+        descricao: sugestao,
+        Userid: req.session.currentUser.id
+    })
+    req.session.message = "Os dados foram inseridos com sucesso!"
+    res.redirect('/dashboard')
+    
+})
+
+app.get('/sugestoes', async (req, res)=>{
+    if (!req.session.currentUser){
+        req.session.message = "Você precisa estar logado para continuar!"
+        res.redirect('/login')
+    }else if(req.session.currentUser.tipo != 'admin'){
+        req.session.message = "Você não tem permissão para acessar essa página!"
+        res.redirect('/login')
+    }else{
+        const sugestoes = await Suggestion.findAll()
+        res.render('pages/suggestion/showAll', { sugestoes})
+    }
+})
+
+app.delete('/sugestoes/:id', async (req, res)=>{
+    const {id} = req.params
+
+    const sugestao = await Suggestion.findByPk(id)
+    await sugestao.destroy()
+    res.redirect('/sugestoes')
 })
 
 app.listen(port, ()=>{

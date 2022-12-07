@@ -9,6 +9,10 @@ const Suggestion = database.define('suggestion', {
         autoIncrement: true,
         primaryKey: true
     },
+    componente:{
+        type: Sequelize.STRING,
+        allowNull: false  
+    },
     descricao:{
         type: Sequelize.STRING,
         allowNull: false  

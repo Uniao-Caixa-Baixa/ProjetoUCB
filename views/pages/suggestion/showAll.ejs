@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <%- include('../../partials/head.ejs') %>
+    
+<body>
+    <%- include('../../partials/header.ejs') %>
+    <h1>Lista de Sugestões</h1>
+    <section>
+        <table>
+            <tr>
+                <th class="table-header">Componente</th>
+                <th class="table-header">Descrição</th>
+                <th class="table-header"></th>
+                <th class="table-header"></th>
+            </tr>
+            <% for(let sugestao of sugestoes ) { %>
+                <tr>
+                    <td><%= sugestao.componente %></td>
+                    <td><%= sugestao.descricao %></td>
+                    <td><form class="fake-form" action="/sugestoes/<%= sugestao.id %>?_method=DELETE" method="post">
+                        <button class="danger-button">Excluir</button>
+                    </form></td>
+                </tr>
+                <% } %>
+        </table>
+    </section>
+    
+</body>
+</html>
